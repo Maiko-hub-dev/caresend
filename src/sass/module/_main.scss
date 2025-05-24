@@ -1,0 +1,122 @@
+@use "../global/" as *;
+
+.main__catch {
+    padding: 2.5rem 0 0 0;
+}
+.main.main__catch {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 150vh;
+    background-image: linear-gradient(135deg,$main, $sub);
+    @include mq("sp"){
+        height: 170vh;
+    }
+    @include mq("md"){
+        flex-direction: row;
+        height: 100vh;
+    }
+}
+.main__headcopy {
+    display: block;
+    width: 100%;
+    color: $white;
+    font-weight: $regular;
+    letter-spacing: 0.04em;
+    text-align: center;
+    font-size: 0.875rem;
+    position: relative;  // 念の為
+    @include mq("md"){
+        display: inline-block;
+    }
+}
+.main__catch-text {
+    display: inline-block;
+    width: 100%;
+    margin-top: 1.125rem;
+    color: $white;
+    font-size: 1.5rem;
+    line-height: 1.8695;
+    letter-spacing: 0.04em;
+    font-weight: $bold;
+    text-align: center;
+}
+.main__catch--intoroduction {
+    display: inline-block;
+    width: 100%;
+    margin-top: 1.5rem;
+    color: $white;
+    font-size: 0.875rem;
+    font-weight: $regular;
+    line-height: 1.7857142;
+    text-align: center;
+}
+.main__feature {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 0 1rem;
+}
+
+.main__features {
+    display: block;
+    background-color: $white;
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+    // テキストスタイル
+    font-weight: $bold;
+    color: $main;
+    border: solid $main 1px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    //  内側のテキストの位置
+    padding: 1.75rem 0 0 0;
+}
+
+.main__features.main__features2 {
+    margin-left: 0.25rem;
+    padding: 1.75rem 0.25rem 0;
+}
+
+.feature-head {
+    font-size: 1rem;
+    display: inline-block;
+}
+.feature-appear {
+    font-size: 1.125rem;
+    display: inline-block;
+    letter-spacing: 0.01em;
+}
+.feature__number {
+    color: $bg-black;
+    font-size: 0.625rem;
+}
+.feature__star{
+    color: $bg-black;
+    font-size: 0.55rem;
+    transform: scale(0.9);
+}
+.main__catch-description {
+    display: inline-block;
+    width: 100%;
+    color: $white;
+    font-size: 0.75rem;
+    padding-left: 1rem;    
+    margin-top: 1.5rem;
+}
+.main__catch-description.main__catch-description2{
+    margin-bottom: rem(7);
+    margin-top: 0;
+}
+.main__hero--img {
+    padding: 0 0.5rem;
+}
+.main__hero-image {
+    display: block;
+}
+.main__form {
+    padding: 0.5rem;
+}

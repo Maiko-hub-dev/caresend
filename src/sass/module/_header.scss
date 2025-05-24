@@ -1,0 +1,51 @@
+@use "../global/" as *;
+.header {
+    position: sticky;
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    z-index: 2999;
+}
+.care-send__header {
+    background-color: $white;
+}
+
+.header__btns{
+    margin-left: 5.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header__mail {
+    width: 4rem;
+    height: 4rem;
+    background-color: $main;
+    padding: 0.5rem;
+}
+.header__mail-image{
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 auto;
+}
+.header__mail-text {
+    display: inline-block;
+    position: relative;
+    top: -0.35rem;
+    width: 100%;
+    font-family: $base-font;
+    font-size: 0.625rem;
+    color: $white;
+    text-align: center;
+}
+.header__menu-button {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    background-color: $bg-black;
+    padding:  0.5rem;
+    cursor: pointer;
+}

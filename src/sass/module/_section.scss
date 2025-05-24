@@ -1,0 +1,23 @@
+@use "../global/" as *;
+
+.section-title {
+    font-size: 1.5rem;
+    color: $bg-black;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.04em;
+}
+.section__submit {
+    display: block;
+    margin: 2.4375rem auto 0;
+    background-color: $white;
+    border-radius: 1.825rem;
+    padding: 1rem 3.125rem;
+}
+.submit__button {
+    color: $main;
+    font-size: 1.25rem;
+    font-weight: $bold;
+    display: inline-block;
+    text-align: center;
+}

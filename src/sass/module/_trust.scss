@@ -1,0 +1,38 @@
+@use "../global/" as *;
+
+.trust {
+    background-color: $white;
+    padding: 2.5rem 0 0 0;
+}
+.trust-text {
+    font-size: 1.25rem;
+    color: $bg-black;
+    font-weight: $bold;
+    text-align: center;
+}
+.trust__laurel{
+    margin-top: 1.875rem;
+    display: flex;
+    flex-direction: column;
+}
+.certification_img {
+    display: block;
+    width: 17.5rem;
+    margin: 0 auto;
+}
+.certification_img:first-child{
+    margin-bottom: 0.5rem;
+}
+
+.trust__with{
+    margin-top: 2.4375rem;
+    display: flex;
+    justify-content: space-between;
+}
+.badge_with {
+    display: block;
+    width: 10rem;
+}
+.card-swiper.swiper{
+    height: auto;
+}

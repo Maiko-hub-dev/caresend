@@ -1,0 +1,14 @@
+@use "../global/" as *;
+
+.menu__button {
+    background-color: $white;
+}
+.menu__text {
+    display: inline-block;
+    width: 100%;
+    color: $white;
+    font-size: 0.625rem;
+    font-family: $base-font;
+    margin-top: 0.25rem;
+    text-align: center;
+}

@@ -1,0 +1,95 @@
+@use "../global/" as *;
+
+.contents_inner.swiper {
+  min-height: 471px;
+  @include mq("md"){
+    min-height: 488px;
+  }
+}
+
+/* スライドの動き等速 */
+.swiper-wrapper {
+  position: relative;
+  display: flex;
+  height: 100%;
+  min-width: 471px;
+  transition-timing-function: linear;
+  }
+/* 画像のサイズ調整 */
+.swiper-slide {
+    flex-shrink: 0;
+    width: 100%; // 1スライドを100%表示
+    margin: 0 2.1875rem;
+    box-sizing: border-box;
+    
+    @media (min-width: 768px) {
+       
+        // 2枚横に並べる場合、gapはJSの spaceBetween で設定するのが主流
+      }
+}
+.swiper-slide.swiper-slide-duplicate{
+  height: inherit;
+}
+
+  .swiper-slide img {
+    align-self: center; /* 上下の中央揃え */
+    max-width: 100%;
+    // width: auto;
+    object-fit: cover; /* IE: not support */
+  }
+
+ /* 共通スタイル */
+.btn-maru {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background-color: $main;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  
+  /* ホバー時の変化（任意） */
+  .btn-maru:hover {
+    background-color: $sub;
+  }
+  // .swiper-button-prev.btn-maru::before,
+  // .swiper-button-next.btn-maru::before{
+    
+  // }
+  /* 前ボタン用（左側） */
+  .swiper-button-prev.btn-maru::before {
+    content: "<";
+    font-weight: bold;
+  }
+  
+  /* 次ボタン用（右側） */
+  .swiper-button-next.btn-maru::before {
+    content: ">";
+    font-weight: bold;
+ 
+  }
+  
+  /* 配置調整 */
+  .swiper-button-prev.btn-maru {
+    left: -0.5rem;
+    @include mq("md"){
+      left: 0;
+    }
+  }
+  
+  .swiper-button-next.btn-maru {
+    right: -0.875rem;
+    @include mq("md"){
+      right: 0;
+    }
+  }
+  

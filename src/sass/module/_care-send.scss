@@ -1,0 +1,28 @@
+@use "../global/" as *;
+
+.care-send__header {
+    width: 100%;
+    height: 4rem;
+}
+.care-send__hero{
+    position: relative;
+    display: flex;
+    flex:1;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    z-index: 8888;
+    padding-left: 1rem;
+}
+.hero__link {
+    display: block;
+}
+.care-send__logo {
+    position: relative;
+    display: block;
+    object-fit: cover;
+    max-height: 100%;
+    width: 8.6875rem;
+    height: auto;
+    z-index: 10000;
+}

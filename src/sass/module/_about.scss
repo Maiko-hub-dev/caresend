@@ -1,0 +1,70 @@
+@use "../global/" as *;
+
+.about {
+    padding: 4.5rem 1.0625rem 0;
+    @include mq("md"){
+        padding: 4.5rem 0 0 0;
+    }
+}
+
+.about__text{
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+    color: $bg-black;
+    line-height: 1.75;
+    font-weight: $bold;
+    text-align: center;
+    margin-top: 3.9375rem;
+}
+.about__text .about__text--up{
+    font-size: 1.5rem;
+    color: $main;
+    font-weight: $bold;
+    letter-spacing: 0.04em;
+}
+.about__service-flow{
+    background-color: $about;
+    width: 100%;
+    border-radius: 0.3125rem;
+    @include mq("md"){
+        padding:  0 7.6875rem;
+        min-width: 50.5rem;
+    }
+}
+.about__service-on {
+    @include mq("md"){
+        padding: 2.8125rem 23.697%;
+    }
+}
+
+
+/* その場で */
+/* ----------パターン2：下からふわっと---------- */
+/* 画面外 */
+.fade-block2 {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.7s ease-in;
+  }
+  /* 画面に入った時の動き */
+  .fade-block2.blockIn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+.about__flow-image{
+    position: relative;
+    display: none;
+    @include mq("md"){
+        display: block;
+        margin: 0 auto;
+        top: -1.25rem;
+    }
+}
+.about__flow-image-sp {
+    display: block;
+    @include mq("md"){
+        display: none;
+    }
+}

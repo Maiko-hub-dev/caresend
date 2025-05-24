@@ -1,0 +1,121 @@
+@use "../global/" as *;
+.inquiry-form {
+    background-color: $white;
+    padding: 0.5rem;
+    width: 100%;
+    @include mq("md"){
+        width: 25rem;
+    }
+}
+.inquiry-form__baloon {
+    position: relative;
+    background-color: $main; /* 吹き出しの背景色 */
+    color: $white; /* テキストの色 */
+    padding: 1.125rem 1.25rem;
+    margin: 1.5em 0;
+    max-width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.3125rem;
+    border: 1px solid $black; /* 吹き出しの枠線 */
+  }
+  
+  .inquiry-form__baloon::before,
+  .inquiry-form__baloon::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: solid transparent;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+  }
+  
+  .inquiry-form__baloon::before {
+    top: 100%;
+    border-width: 14px;
+    border-top-color: $black; /* 外側の黒線 */
+  }
+  
+  .inquiry-form__baloon::after {
+    top: calc(100% - 1px); /* 外側の三角形の内側に配置 */
+    border-width: 14px;
+    border-top-color: $main; /* 吹き出しの背景色と同じ */
+  }
+  
+
+.inquiry-form__baloon-try {
+    color: $white;
+}
+
+.inquiry__form-item {
+    display: block;
+    margin-top: 0.9375rem;
+}
+.inquiry__form-names {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    // justify-content: center;
+}
+.inquiry-form-name {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.name__space{
+    width: 48%;
+}
+
+.names__label{
+    display: inline-block;
+    font-size: 0.875rem;
+    color: $bg-black;
+}
+.inquiry_need {
+    font-size: 0.625rem;
+    color: $red;
+    transform: scale(0.9);
+}
+
+.inquiry__input {
+    background-color: $input;
+    border-radius: 0.3125rem;
+    border: solid 1px $form;
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+}
+
+.labelmy__input.labelmy__input{
+    width: 50%;
+}
+.labelmy__input.labelmy__input2{
+    margin-left: 0.5625rem;
+}
+
+.inquiry__input.inquiry-input{
+    width: 100%;
+}
+.inquiry__form-policy{
+    color: $bg-black;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    font-weight: $regular;
+    margin-top: 1.5rem;
+}
+.inquiry__submit-button{
+    display: block;
+    width: 15.375rem;
+    background-color: $main;
+    border-radius: 1.5625em;
+    padding: 0.8125rem 1.6875rem;
+    margin: 2.5rem auto 1.1875rem;
+}
+.inquiry__button{
+    display: inline-block;
+    color: $white;
+    font-size: 1rem;
+    font-weight: $bold;
+    letter-spacing: 0.04em;
+}
