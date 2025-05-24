@@ -4,6 +4,9 @@
     background-color: $about;
     width: 100%;
     padding: 4.5rem 2rem;
+    @include mq("md"){
+      padding: 4.5rem 0;
+    }
 }
 
 .kind__title{
@@ -12,9 +15,22 @@
 .kind__content{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
-    margin-top: 1.9375rem;
+    margin: 1.9375rem auto;
+    @include mq("sp"){
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(189px,1fr));
+      grid-gap: 0.75rem;
+    }
+    @include mq("md"){
+      width: 66.66666%;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(296px, 1fr));
+      grid-gap: 0.75rem;
+
+    }
 }
 
 .kind__item {
@@ -24,7 +40,16 @@
     background-color: $white; /* ボックスの背景色 */
     position: relative;
     overflow: hidden;
-    padding: 0.875rem 1.5rem;
+    padding: 0.875rem 0.5rem;
+    margin: 0 auto;
+    @include mq("sp"){
+      width: 33%;
+      min-width: 189px;
+    }
+    @include mq("md"){
+      width: 33%;
+      max-width: 296px;
+    }
   }
   
   .kind__item::before {
@@ -37,12 +62,25 @@
     background-color: $main;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    @include mq("sp"){
+      height: 10px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
   }
+  
   
   .kind__item-title{
     font-size: 0.75rem;
     font-weight: $bold;
     color: $bg-black;
+    text-align: center;
+    @include mq("sp"){
+      font-size: 1rem;
+    }
+    @include mq("md"){
+      font-size: 1.5rem;
+    }
   }
   .kind__item--price{
     letter-spacing: 0.04em;
@@ -51,11 +89,24 @@
     color: $bg-black;
     margin-top: 0.75rem;
     text-align: center;
+    @include mq("sp"){
+      margin-top: 1.25rem;
+      font-size: 1rem;
+    }
+    @include mq("md"){
+      font-size: 2rem;
+    }
   }
   .kind__item--price  .kind__price{
     font-size: 2.25rem;
     color: $main;
     font-weight: $bold;
+    @include mq("sp"){
+      font-size: 4.5rem;
+    }
+    @include mq("md"){
+      font-size: 6rem;
+    }
   }
   .care_price__description {
     margin-top: 3rem;

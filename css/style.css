@@ -922,8 +922,8 @@ select::-ms-expand {
 }
 @media screen and (min-width: 768px) {
   .about__service-flow {
-    padding: 0 7.6875rem;
-    min-width: 50.5rem;
+    padding: 0 15.2277%;
+    max-width: 50.5rem;
   }
 }
 
@@ -959,6 +959,7 @@ select::-ms-expand {
   .about__flow-image {
     display: block;
     margin: 0 auto;
+    width: 35.125rem;
     top: -1.25rem;
   }
 }
@@ -1003,6 +1004,13 @@ select::-ms-expand {
 .feature {
   padding: 0 26px;
   padding: 0 1.625rem;
+  margin-top: 72px;
+  margin-top: 4.5rem;
+}
+@media screen and (min-width: 768px) {
+  .feature {
+    margin-top: 6rem;
+  }
 }
 
 .feature__service-flow {
@@ -1319,6 +1327,11 @@ select::-ms-expand {
   padding: 72px 32px;
   padding: 4.5rem 2rem;
 }
+@media screen and (min-width: 768px) {
+  .care_price {
+    padding: 4.5rem 0;
+  }
+}
 
 .kind__title {
   font-weight: 700;
@@ -1331,12 +1344,28 @@ select::-ms-expand {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
-  margin-top: 31px;
-  margin-top: 1.9375rem;
+  margin: 31px auto;
+  margin: 1.9375rem auto;
+}
+@media screen and (min-width: 375px) {
+  .kind__content {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(189px, 1fr));
+    grid-gap: 0.75rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .kind__content {
+    width: 66.66666%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(296px, 1fr));
+    grid-gap: 0.75rem;
+  }
 }
 
 .kind__item {
@@ -1347,8 +1376,21 @@ select::-ms-expand {
   background-color: #ffffff; /* ボックスの背景色 */
   position: relative;
   overflow: hidden;
-  padding: 14px 24px;
-  padding: 0.875rem 1.5rem;
+  padding: 14px 8px;
+  padding: 0.875rem 0.5rem;
+  margin: 0 auto;
+}
+@media screen and (min-width: 375px) {
+  .kind__item {
+    width: 33%;
+    min-width: 189px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .kind__item {
+    width: 33%;
+    max-width: 296px;
+  }
 }
 
 .kind__item::before {
@@ -1362,12 +1404,30 @@ select::-ms-expand {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+@media screen and (min-width: 375px) {
+  .kind__item::before {
+    height: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+}
 
 .kind__item-title {
   font-size: 12px;
   font-size: 0.75rem;
   font-weight: 700;
   color: #333333;
+  text-align: center;
+}
+@media screen and (min-width: 375px) {
+  .kind__item-title {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .kind__item-title {
+    font-size: 1.5rem;
+  }
 }
 
 .kind__item--price {
@@ -1380,12 +1440,33 @@ select::-ms-expand {
   margin-top: 0.75rem;
   text-align: center;
 }
+@media screen and (min-width: 375px) {
+  .kind__item--price {
+    margin-top: 1.25rem;
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .kind__item--price {
+    font-size: 2rem;
+  }
+}
 
 .kind__item--price .kind__price {
   font-size: 36px;
   font-size: 2.25rem;
   color: #007FC6;
   font-weight: 700;
+}
+@media screen and (min-width: 375px) {
+  .kind__item--price .kind__price {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .kind__item--price .kind__price {
+    font-size: 6rem;
+  }
 }
 
 .care_price__description {
@@ -1431,13 +1512,25 @@ select::-ms-expand {
   margin-top: 5.5625rem;
 }
 
+.accordion__door {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.accordion__door.open {
+  background-color: #007FC6;
+  color: #ffffff;
+  border-radius: 0.625em 0.625em 0 0;
+}
+
 .accordion_question {
-  display: block;
   background-color: #ffffff;
   border-radius: 10px;
-  width: 100%;
-  margin-right: 10px;
-  margin-right: 0.625rem;
   -webkit-transition: background-color 0.7s ease-in-out;
   transition: background-color 0.7s ease-in-out;
 }
@@ -1481,19 +1574,10 @@ select::-ms-expand {
   font-size: 16px;
   font-size: 1rem;
   font-weight: normal;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   padding: 16px 2px;
   padding: 1rem 0.125rem;
   border-radius: 0.625rem;
-  width: 90%;
+  width: 75%;
   margin-right: -12px;
   margin-right: -0.75rem;
 }
@@ -1504,7 +1588,7 @@ select::-ms-expand {
 }
 
 /* タイトル横のプラスマーク縦線 */
-.accordion__title::before {
+.accordion__door::before {
   position: absolute;
   content: "";
   top: 50%;
@@ -1521,7 +1605,7 @@ select::-ms-expand {
 }
 
 /* タイトル横のプラスマーク横線 */
-.accordion__title::after {
+.accordion__door::after {
   position: absolute;
   content: "";
   top: 50%;
@@ -1538,14 +1622,14 @@ select::-ms-expand {
 }
 
 /* アコーディオンが開いたとき縦線の変化 */
-.accordion_question.open .accordion__title::before {
+.accordion_question.open .accordion__door::before {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   background-color: #ffffff;
 }
 
 /* アコーディオンが開いたとき横線の変化 */
-.accordion_question.open .accordion__title::after {
+.accordion_question.open .accordion__door::after {
   opacity: 0;
 }
 
@@ -1554,7 +1638,7 @@ select::-ms-expand {
   border-radius: 0.625rem 0.625rem 0 0;
 }
 
-.accordion_question.open .accordion__title {
+.accordion_question.open .accordion__door {
   background-color: #007FC6;
   color: #ffffff;
   border-radius: 0.625rem 0.625rem 0 0;
@@ -1580,7 +1664,7 @@ select::-ms-expand {
 
 .document-download {
   width: 100%;
-  height: 150vh;
+  height: 180vh;
   background-image: linear-gradient(135deg, #007FC6, #02D1FF);
   padding: 72px 16px 46px;
   padding: 4.5rem 1rem 2.875rem;
@@ -1715,9 +1799,24 @@ select::-ms-expand {
   }
 }
 
+.footer {
+  padding: 24px 74px;
+  padding: 1.5rem 4.625rem;
+}
+
 .footer-logo {
   display: block;
-  width: 80px;
-  width: 5rem;
+  width: 227px;
+  width: 14.1875rem;
+  margin: 0 auto;
+}
+
+.footer__copyright {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Goldman", sans-serif;
+  color: #333333;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

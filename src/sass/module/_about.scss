@@ -27,8 +27,8 @@
     width: 100%;
     border-radius: 0.3125rem;
     @include mq("md"){
-        padding:  0 7.6875rem;
-        min-width: 50.5rem;
+        padding:  0 15.2277%;
+        max-width: 50.5rem;
     }
 }
 .about__service-on {
@@ -36,8 +36,6 @@
         padding: 2.8125rem 23.697%;
     }
 }
-
-
 /* その場で */
 /* ----------パターン2：下からふわっと---------- */
 /* 画面外 */
@@ -52,13 +50,13 @@
     transform: translateY(0);
   }
 
-
 .about__flow-image{
     position: relative;
     display: none;
     @include mq("md"){
         display: block;
         margin: 0 auto;
+        width: 35.125rem;
         top: -1.25rem;
     }
 }

@@ -48,7 +48,7 @@ const mySwiper = new Swiper('.case-swiper', {
 
 //アコーディオンをクリックした時の動作
 $(document).ready(function() {
-    $('.accordion__title').click(function() {
+    $('.accordion__title, .accordion__door').click(function() {
       // アコーディオン（内容）の開閉    
     $(this).next('.accordion__answer').slideToggle(1000);
       // タイトルにopenクラスを付与または削除してプラスマイナス可変

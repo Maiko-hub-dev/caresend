@@ -2,6 +2,10 @@
 
 .feature {
     padding: 0 1.625rem;
+    margin-top: 4.5rem;
+    @include mq("md"){
+        margin-top: 6rem;;
+    }
 }
 .feature__service-flow{
     padding-top: 3.1875rem;

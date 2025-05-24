@@ -26,12 +26,19 @@
     font-weight: $bold;
     margin-top: 5.5625rem;
   }
+  .accordion__door{
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .accordion__door.open {
+    background-color: $main;
+    color: $white;
+    border-radius: 0.625em 0.625em 0 0;
+  }
   .accordion_question{
-    display: block;
     background-color: $white;
     border-radius: 10px;
-    width: 100%;
-    margin-right: 0.625rem;
     transition: background-color 0.7s ease-in-out;
   }
   .accordion_question:not(:first-child){
@@ -62,12 +69,9 @@
     cursor: pointer;
     font-size:1rem;
     font-weight: normal;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
     padding: 1rem 0.125rem;
     border-radius: 0.625rem;
-    width: 90%;
+    width: 75%;
     margin-right: -0.75rem;
     @include mq("md"){
       width: 100%;
@@ -75,7 +79,7 @@
   }
  
   /* タイトル横のプラスマーク縦線 */
-  .accordion__title::before{
+  .accordion__door::before{
     position: absolute;
     content: '';
     top: 50%;
@@ -87,7 +91,7 @@
     transition: transform 1s ease-in-out;
   }
   /* タイトル横のプラスマーク横線 */
-  .accordion__title::after{
+  .accordion__door::after{
     position: absolute;
     content: '';
     top: 50%;
@@ -99,12 +103,12 @@
     transition: transform 1s ease-in-out;
   }
   /* アコーディオンが開いたとき縦線の変化 */
-  .accordion_question.open .accordion__title::before {
+  .accordion_question.open .accordion__door::before {
     transform: rotate(180deg);
     background-color: $white;
   }
   /* アコーディオンが開いたとき横線の変化 */
-  .accordion_question.open .accordion__title::after {
+  .accordion_question.open .accordion__door::after {
     opacity:0;
   }
 //  開いた時にカラーを逆転させる
@@ -112,7 +116,7 @@
     color: $white;
     border-radius: 0.625rem 0.625rem 0 0;
 }
-.accordion_question.open .accordion__title{
+.accordion_question.open .accordion__door{
     background-color: $main;
     color: $white;
     border-radius: 0.625rem 0.625rem 0 0;
