@@ -49,6 +49,16 @@
     opacity: 1;
     transform: translateY(0);
   }
+  .fade-block3 {
+    opacity: 0;
+    transform: translateY(90px);
+    transition: all 0.8s ease-in-out;
+  }
+  /* 画面に入った時の動き */
+  .fade-block3.blockIn {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
 .about__flow-image{
     position: relative;

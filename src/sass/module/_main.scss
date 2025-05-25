@@ -116,7 +116,18 @@
 }
 .main__hero-image {
     display: block;
+    @include mq("md"){
+    width: 360px;    
+    }
 }
 .main__form {
     padding: 0.5rem;
 }
+
+.end-message {
+    display: none;
+  }
+  
+  .false-message {
+    display: none;
+  }

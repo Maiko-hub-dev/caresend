@@ -12,6 +12,15 @@
 .kind__title{
     font-weight: $bold;
 }
+
+.kind__contents {
+  @include mq("md"){
+  padding: 0 10.5%;
+  }
+  @include mq("lg"){
+    padding: 0 20.3125%;
+  }
+}
 .kind__content{
     display: flex;
     align-items: center;
@@ -19,13 +28,11 @@
     width: 100%;
     margin: 1.9375rem auto;
     @include mq("sp"){
-      width: 80%;
-      display: grid;
+      width: 100%;
       grid-template-columns: repeat(3, minmax(189px,1fr));
       grid-gap: 0.75rem;
     }
     @include mq("md"){
-      width: 66.66666%;
       display: grid;
       grid-template-columns: repeat(3, minmax(296px, 1fr));
       grid-gap: 0.75rem;
@@ -114,5 +121,9 @@
     font-size: 0.75rem;
     color: $bg-black;
     font-weight: $regular;
+    @include mq("md"){
+      margin: 3rem auto 3.5635rem;
+      line-height: 1.785714;
+    }
   }
 

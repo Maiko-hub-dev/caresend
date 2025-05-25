@@ -2,9 +2,12 @@
 
 .document-download {
     width: 100%;
-    height: 180vh;
+    height: 160vh;
     background-image: linear-gradient(135deg,$main, $sub);
     padding: 4.5rem 1rem 2.875rem;
+    @include mq("sp"){
+        height: 140vh;
+    }
    
     @include mq("md"){
         height: 100vh;

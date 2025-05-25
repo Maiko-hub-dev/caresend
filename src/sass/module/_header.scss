@@ -8,6 +8,9 @@
     justify-content: space-between;
     top: 0;
     z-index: 2999;
+    @include mq("md"){
+        height: 6rem;
+    }
 }
 .care-send__header {
     background-color: $white;
@@ -19,17 +22,45 @@
     align-items: center;
     justify-content: center;
 }
+.hero__link{
+    @include mq("md"){
+    display: block;
+    width: 14.1875rem;
+    padding-left: 1.25rem;
+    }
+}
+.header__logo {
+    @include mq("md"){
+        display: block;
+    }
+}
 .header__mail {
     width: 4rem;
     height: 4rem;
     background-color: $main;
     padding: 0.5rem;
+    @include mq("md"){
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: 0;
+        width: 11.8125rem;
+        height: 6rem; 
+        padding-left: 2.6875em;
+        cursor: pointer;
+    }
 }
 .header__mail-image{
     display: block;
     width: 2rem;
     height: 2rem;
     margin: 0 auto;
+    @include mq("md"){
+        display: inline-block;
+        margin: 0;
+        text-align: center;
+    }
 }
 .header__mail-text {
     display: inline-block;
@@ -40,6 +71,24 @@
     font-size: 0.625rem;
     color: $white;
     text-align: center;
+    @include mq("md"){
+        height: 6rem;
+        width: fit-content;
+        top: -0.55rem;
+        font-size: 1rem;
+        font-weight: $bold;
+        line-height: 2.5;
+        margin-left: 0.4375rem;
+    }
+}
+.header__mail__inquiry{
+    @include mq("md"){
+        display: block;
+        width: 100%;
+        height: inherit;
+        cursor: pointer;
+        padding: 2rem 0;
+    }
 }
 .header__menu-button {
     display: block;
@@ -48,4 +97,39 @@
     background-color: $bg-black;
     padding:  0.5rem;
     cursor: pointer;
+    @include mq("md"){
+        display: none;
+    }
+}
+.header__nav {
+    display: none;
+    @include mq("md"){
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: inherit;
+        margin-left: 17%;
+    }
+}
+.header__navigation{
+    display: none;
+    @include mq("md"){
+        display: block;
+        height: inherit;
+        color: $main;
+        font-size: 1rem;
+        font-weight: $bold;
+    }
+}
+.header__navigation:not(:first-child){
+    margin-left: 1.75rem;
+}
+.header__navigation-link {
+    @include mq("md"){
+        display: block;
+        text-decoration: none;
+        color: $main;
+        height: inherit;
+        padding-top: 2.5rem;
+    }
 }

@@ -193,6 +193,11 @@ select::-ms-expand {
   top: 0;
   z-index: 2999;
 }
+@media screen and (min-width: 768px) {
+  .header {
+    height: 6rem;
+  }
+}
 
 .care-send__header {
   background-color: #ffffff;
@@ -212,6 +217,20 @@ select::-ms-expand {
           justify-content: center;
 }
 
+@media screen and (min-width: 768px) {
+  .hero__link {
+    display: block;
+    width: 14.1875rem;
+    padding-left: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__logo {
+    display: block;
+  }
+}
+
 .header__mail {
   width: 64px;
   width: 4rem;
@@ -221,6 +240,25 @@ select::-ms-expand {
   padding: 8px;
   padding: 0.5rem;
 }
+@media screen and (min-width: 768px) {
+  .header__mail {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    right: 0;
+    width: 11.8125rem;
+    height: 6rem;
+    padding-left: 2.6875em;
+    cursor: pointer;
+  }
+}
 
 .header__mail-image {
   display: block;
@@ -229,6 +267,13 @@ select::-ms-expand {
   height: 32px;
   height: 2rem;
   margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .header__mail-image {
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+  }
 }
 
 .header__mail-text {
@@ -243,6 +288,29 @@ select::-ms-expand {
   color: #ffffff;
   text-align: center;
 }
+@media screen and (min-width: 768px) {
+  .header__mail-text {
+    height: 6rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    top: -0.55rem;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 2.5;
+    margin-left: 0.4375rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__mail__inquiry {
+    display: block;
+    width: 100%;
+    height: inherit;
+    cursor: pointer;
+    padding: 2rem 0;
+  }
+}
 
 .header__menu-button {
   display: block;
@@ -254,6 +322,58 @@ select::-ms-expand {
   padding: 8px;
   padding: 0.5rem;
   cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .header__menu-button {
+    display: none;
+  }
+}
+
+.header__nav {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .header__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: inherit;
+    margin-left: 17%;
+  }
+}
+
+.header__navigation {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .header__navigation {
+    display: block;
+    height: inherit;
+    color: #007FC6;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
+
+.header__navigation:not(:first-child) {
+  margin-left: 28px;
+  margin-left: 1.75rem;
+}
+
+@media screen and (min-width: 768px) {
+  .header__navigation-link {
+    display: block;
+    text-decoration: none;
+    color: #007FC6;
+    height: inherit;
+    padding-top: 2.5rem;
+  }
 }
 
 .hamberger {
@@ -442,6 +562,11 @@ select::-ms-expand {
   height: 64px;
   height: 4rem;
 }
+@media screen and (min-width: 768px) {
+  .care-send__header {
+    height: 6rem;
+  }
+}
 
 .care-send__hero {
   position: relative;
@@ -462,6 +587,13 @@ select::-ms-expand {
   padding-left: 16px;
   padding-left: 1rem;
 }
+@media screen and (min-width: 768px) {
+  .care-send__hero {
+    display: block;
+    height: 6rem;
+    padding: 1.375rem 0;
+  }
+}
 
 .hero__link {
   display: block;
@@ -477,6 +609,11 @@ select::-ms-expand {
   width: 8.6875rem;
   height: auto;
   z-index: 10000;
+}
+@media screen and (min-width: 768px) {
+  .care-send__logo {
+    width: 14.1875rem;
+  }
 }
 
 .menu__button {
@@ -665,10 +802,23 @@ select::-ms-expand {
 .main__hero-image {
   display: block;
 }
+@media screen and (min-width: 768px) {
+  .main__hero-image {
+    width: 360px;
+  }
+}
 
 .main__form {
   padding: 8px;
   padding: 0.5rem;
+}
+
+.end-message {
+  display: none;
+}
+
+.false-message {
+  display: none;
 }
 
 .inquiry-form {
@@ -946,6 +1096,21 @@ select::-ms-expand {
 
 /* 画面に入った時の動き */
 .fade-block2.blockIn {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.fade-block3 {
+  opacity: 0;
+  -webkit-transform: translateY(90px);
+          transform: translateY(90px);
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+/* 画面に入った時の動き */
+.fade-block3.blockIn {
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
@@ -1337,6 +1502,17 @@ select::-ms-expand {
   font-weight: 700;
 }
 
+@media screen and (min-width: 768px) {
+  .kind__contents {
+    padding: 0 10.5%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .kind__contents {
+    padding: 0 20.3125%;
+  }
+}
+
 .kind__content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1353,15 +1529,13 @@ select::-ms-expand {
 }
 @media screen and (min-width: 375px) {
   .kind__content {
-    width: 80%;
-    display: grid;
+    width: 100%;
     grid-template-columns: repeat(3, minmax(189px, 1fr));
     grid-gap: 0.75rem;
   }
 }
 @media screen and (min-width: 768px) {
   .kind__content {
-    width: 66.66666%;
     display: grid;
     grid-template-columns: repeat(3, minmax(296px, 1fr));
     grid-gap: 0.75rem;
@@ -1478,6 +1652,12 @@ select::-ms-expand {
   color: #333333;
   font-weight: 300;
 }
+@media screen and (min-width: 768px) {
+  .care_price__description {
+    margin: 3rem auto 3.5635rem;
+    line-height: 1.785714;
+  }
+}
 
 .faq {
   background-color: #F9F9F9;
@@ -1592,7 +1772,7 @@ select::-ms-expand {
   position: absolute;
   content: "";
   top: 50%;
-  right: 10px;
+  right: 20px;
   width: 20px;
   height: 2px;
   background-color: #333333;
@@ -1609,7 +1789,7 @@ select::-ms-expand {
   position: absolute;
   content: "";
   top: 50%;
-  right: 10px;
+  right: 20px;
   width: 20px;
   height: 2px;
   background-color: #333333;
@@ -1664,10 +1844,15 @@ select::-ms-expand {
 
 .document-download {
   width: 100%;
-  height: 180vh;
+  height: 160vh;
   background-image: linear-gradient(135deg, #007FC6, #02D1FF);
   padding: 72px 16px 46px;
   padding: 4.5rem 1rem 2.875rem;
+}
+@media screen and (min-width: 375px) {
+  .document-download {
+    height: 140vh;
+  }
 }
 @media screen and (min-width: 768px) {
   .document-download {
