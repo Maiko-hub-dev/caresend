@@ -12,7 +12,10 @@
     margin: 2.4375rem auto 0;
     background-color: $white;
     border-radius: 1.825rem;
-    padding: 1rem 3.125rem;
+    padding: 1rem 0.5rem;
+    @include mq("md"){
+        padding: 1rem 3.125rem;
+    }
 }
 .submit__button {
     color: $main;

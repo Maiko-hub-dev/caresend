@@ -16,12 +16,30 @@ const swiper = new Swiper(".swiper", {
       }
   }
 });
-swiper.on('slideChangeTransitionEnd', function () {
-  swiper.updateAutoHeight(); // 現在のスライドに合わせて高さを更新
-});
+
+function adjustSlideHeights() {
+  const slides = document.querySelectorAll('.swiper-slide');
+  let maxHeight = 0;
+
+
+
+  // 最大の高さを取得
+  // slides.forEach(slide => {
+  //   const slideContent = slide.querySelector('.slide_case');
+  //   if (slideContent) {
+  //     const height = slideContent.offsetHeight;
+  //     slide.style.height = height + `px`;
+  //   }
+  // });
+
+  // 全スライドに最大高さを適用
+//   slides.forEach(slide => {
+//     slide.querySelector('.slide_case').style.height = `${maxHeight}px`;
+//   });
+}
 
 const mySwiper = new Swiper('.case-swiper', {
-    autoHeight: true,
+    autoHeight: false,
     loop: true, // ループさせたくない場合は false。必要なら true に。
     autoplay: false, // 自動再生しない
     pagination: {
@@ -35,16 +53,24 @@ const mySwiper = new Swiper('.case-swiper', {
     // 任意：一度に1スライド表示
     slidesPerView: 1,
     slidesPerGroup: 1,
-    spaceBetween: 0,
+    spaceBetween: 20,
     breakpoints: {
       768: { // タブレット以上
         slidesPerView: 2,
         slidesPerGroup: 2,
-      }}
+      }},
+      on: {
+        init: adjustSlideHeights,
+        resize: adjustSlideHeights,
+        slideChangeTransitionEnd: adjustSlideHeights
+      }
   }
-
-  
 );
+//  autoHeightを明示的に更新するなら、変数名に合わせて書く
+mySwiper.on('slideChangeTransitionEnd', function () {
+  mySwiper.updateAutoHeight(); // ✅ 変数名を一致させる
+});
+
 
 //アコーディオンをクリックした時の動作
 $(document).ready(function() {
@@ -64,29 +90,25 @@ $(document).ready(function() {
     });
 });
 
+const target = document.querySelector('.main__hero--img.fade-block2.scroll-block.blockIn');
+if (target) {
+  const blockPosition = target.getBoundingClientRect().top + window.scrollY;
+  console.log('blockPosition:', blockPosition);
+} else {
+  console.warn('対象の要素が見つかりません');
+}
 
 // 要素をふわっと表示させる
 $(window).scroll(function() {
   // ↓複数のオブジェクトに対して繰り返し処理を行う
   $(".scroll-block").each(function() {
     var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
-    var blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
-    var windowHeihgt = $(window).height(); // ウィンドウの高さ
-if (scroll > blockPosition - windowHeihgt + 300) {
+    let blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
+    var windowHeight = $(window).height(); // ウィンドウの高さ
+if (scroll > blockPosition - windowHeight + 300) {
       $(this).addClass("blockIn");
   }});
   });
-// 要素をふわっと表示させる その2
-  $(window).scroll(function() {
-    // ↓複数のオブジェクトに対して繰り返し処理を行う
-    $(".scroll-block").each(function() {
-      var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
-      var blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
-      var windowHeihgt = $(window).height(); // ウィンドウの高さ
-  if (scroll > blockPosition - windowHeihgt + 300) {
-        $(this).addClass("blockIn");
-    }});
-    });
 
 // フォームの入力チェック
 $(document).ready(function () {
@@ -145,59 +167,42 @@ $(window).on("scroll", function () {
 
 // Node.jsで
 // Node.js（Expressなど）でGoogleフォームにPOSTする例
-// const express = require('express');
-// const axios = require('axios');
-// const app = express();
-// app.use(express.urlencoded({ extended: true }));
+const express = require('express');
+const axios = require('axios');
+const app = express();
+app.use(express.urlencoded({ extended: true }));
 
-// app.post('/submit-form', async (req, res) => {
-//   try {
-//     await axios.post('https://docs.google.com/forms/u/0/d/e/1FAIpQLSe_Qy1LXiDKhc6xJea-lzijYI6__6T-mBjDsaYkJ6x6_jcPRw/formResponse', null, {
-//       params: {
-//         'entry.123456': req.body.name,  // ← Googleフォームで確認したname属性
-//         'entry.789012': req.body.email
-//       }
-//     });
-//     res.send('送信成功！');
-//   } catch (error) {
-//     res.status(500).send('送信失敗');
-//   }
-// });
-// document.getElementById("contactForm").addEventListener("submit", function (e) {
-//   e.preventDefault(); // フォームの自動送信を止める
-
-//   const formData = new FormData(this);
-
-//   fetch("https://docs.google.com/forms/d/e/XXXX/formResponse", {
-//     method: "POST",
-//     mode: "no-cors", // GoogleフォームはCORS非対応
-//     body: formData
-//   })
-//     .then(() => {
-//       // 成功したら thanks.html へ移動
-//       window.location.href = "http://127.0.0.1:5500/thanks.html";
-//     })
-//     .catch((error) => {
-//       console.error("送信失敗", error);
-//       alert("送信に失敗しました。");
-//     });
-// });
-
-// app.listen(3001, () => console.log('サーバー起動'));
-
+app.post('/submit-form', async (req, res) => {
+  try {
+    await axios.post('https://docs.google.com/forms/u/0/d/e/1FAIpQLSe_Qy1LXiDKhc6xJea-lzijYI6__6T-mBjDsaYkJ6x6_jcPRw/formResponse', null, {
+      params: {
+        'entry.123456': req.body.name,  // ← Googleフォームで確認したname属性
+        'entry.789012': req.body.email
+      }
+    });
+    res.send('送信成功！');
+  } catch (error) {
+    res.status(500).send('送信失敗');
+  }
+});
 document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+  e.preventDefault(); // フォームの自動送信を止める
 
   const formData = new FormData(this);
 
-  fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLSe_Qy1LXiDKhc6xJea-lzijYI6__6T-mBjDsaYkJ6x6_jcPRw/formResponse", {
+  fetch("https://docs.google.com/forms/d/e/XXXX/formResponse", {
     method: "POST",
-    mode: "no-cors", // ← これでCORSエラーは出なくなるが、レスポンスは読めない
+    mode: "no-cors", // GoogleフォームはCORS非対応
     body: formData
-  }).then(() => {
-    // 成功してもレスポンスは来ないので、ここは「仮の成功」として扱う
-    window.location.href = "/thanks.html";
-  }).catch(() => {
-    alert("送信に失敗しました。");
-  });
+  })
+    .then(() => {
+      // 成功したら thanks.html へ移動
+      window.location.href = "http://127.0.0.1:5500/thanks.html";
+    })
+    .catch((error) => {
+      console.error("送信失敗", error);
+      alert("送信に失敗しました。");
+    });
 });
+
+app.listen(3001, () => console.log('サーバー起動'));

@@ -12,18 +12,19 @@
   position: relative;
   display: flex;
   height: 100%;
-  min-width: 471px;
+  // min-width: 471px;
   transition-timing-function: linear;
   }
 /* 画像のサイズ調整 */
 .swiper-slide {
     flex-shrink: 0;
     width: 100%; // 1スライドを100%表示
-    margin: 0 2.1875rem;
     box-sizing: border-box;
-    
+    height: 100%;
+    margin: 0 1.1875rem 0 -0.25rem;
     @media (min-width: 768px) {
-       
+      margin: 0;
+      width: calc(50% - 10px); // spaceBetween: 20 の半分を引く
         // 2枚横に並べる場合、gapはJSの spaceBetween で設定するのが主流
       }
 }
@@ -61,10 +62,7 @@
   .btn-maru:hover {
     background-color: $sub;
   }
-  // .swiper-button-prev.btn-maru::before,
-  // .swiper-button-next.btn-maru::before{
-    
-  // }
+
   /* 前ボタン用（左側） */
   .swiper-button-prev.btn-maru::before {
     content: "<";
@@ -75,7 +73,7 @@
   .swiper-button-next.btn-maru::before {
     content: ">";
     font-weight: bold;
- 
+    position: absolute;
   }
   
   /* 配置調整 */

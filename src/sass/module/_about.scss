@@ -42,7 +42,7 @@
 .fade-block2 {
     opacity: 0;
     transform: translateY(100px);
-    transition: all 0.7s ease-in;
+    transition: all 0.4s ease-in;
   }
   /* 画面に入った時の動き */
   .fade-block2.blockIn {
@@ -51,8 +51,8 @@
   }
   .fade-block3 {
     opacity: 0;
-    transform: translateY(90px);
-    transition: all 0.8s ease-in-out;
+    transform: translateY(110px);
+    transition: all 0.4s ease-in-out;
   }
   /* 画面に入った時の動き */
   .fade-block3.blockIn {
