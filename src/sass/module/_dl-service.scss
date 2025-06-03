@@ -8,7 +8,7 @@
     width: 100%;
     padding: 2rem 1rem;
     @include mq("md"){
-        padding: 2.5rem 2.75rem;
+        padding: 2.5rem 2.75rem 3.25rem;
     }
 }
 .dl-service--title{
@@ -18,4 +18,9 @@
     letter-spacing: 0.04em;
     text-align: center;
     font-weight: $bold;
+}
+.dl-service--title{
+    @include mq("md"){
+        padding-top: 1.25rem;
+    }
 }

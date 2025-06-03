@@ -23,19 +23,25 @@
     height: 100%;
     margin: 0 1.1875rem 0 -0.25rem;
     @media (min-width: 768px) {
-      margin: 0;
+      margin: 0 0.5em;
       width: calc(50% - 10px); // spaceBetween: 20 の半分を引く
         // 2枚横に並べる場合、gapはJSの spaceBetween で設定するのが主流
       }
+}
+.swiper-slide.trust__swiper{
+  @include mq("md"){
+    width: 15.5rem;
+  }
 }
 .swiper-slide.swiper-slide-duplicate{
   height: inherit;
 }
 
-  .swiper-slide img {
+.swiper-slide img {
+    display: block;
     align-self: center; /* 上下の中央揃え */
     max-width: 100%;
-    // width: auto;
+    // width: 100%;
     object-fit: cover; /* IE: not support */
   }
 

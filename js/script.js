@@ -1,12 +1,14 @@
 
 // Swiperの初期化
-const swiper = new Swiper(".swiper", {
+ const swiper = new Swiper(".swiper", {
   
   loop: true, // ループ有効
   slidesPerView: 2, // 一度に表示する枚数
   speed: 6000, // ループの時間
   allowTouchMove: false, // スワイプ無効
   autoplay: {
+      disableOnInteraction: false,
+  
       delay: 0, // 途切れなくループ
   },
   breakpoints: {
@@ -16,6 +18,8 @@ const swiper = new Swiper(".swiper", {
       }
   }
 });
+
+
 
 function adjustSlideHeights() {
   const slides = document.querySelectorAll('.swiper-slide');
@@ -90,18 +94,18 @@ $(document).ready(function() {
     });
 });
 
-const target = document.querySelector('.main__hero--img.fade-block2.scroll-block.blockIn');
-if (target) {
-  const blockPosition = target.getBoundingClientRect().top + window.scrollY;
-  console.log('blockPosition:', blockPosition);
-} else {
-  console.warn('対象の要素が見つかりません');
-}
+// const target = document.querySelector('.main__hero--img.fade-block2.fade-block3.scroll-block.blockIn');
+// if (target) {
+//   const blockPosition = target.getBoundingClientRect().top + window.scrollY;
+//   console.log('blockPosition:', blockPosition);
+// } else {
+//   console.warn('対象の要素が見つかりません');
+// }
 
 // 要素をふわっと表示させる
 $(window).scroll(function() {
   // ↓複数のオブジェクトに対して繰り返し処理を行う
-  $(".scroll-block").each(function() {
+  $("#scroll-block").each(function() {
     var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
     let blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
     var windowHeight = $(window).height(); // ウィンドウの高さ
@@ -109,6 +113,19 @@ if (scroll > blockPosition - windowHeight + 300) {
       $(this).addClass("blockIn");
   }});
   });
+
+//  クラスで動かす
+$(window).on('scroll', function () {
+  $('.scroll-block').each(function () {
+    const scroll = $(window).scrollTop();
+    const blockPosition = $(this).offset().top;
+    const windowHeight = $(window).height();
+    if (scroll > blockPosition - windowHeight + 100) {
+      $(this).addClass('blockIn');
+    }
+  });
+});
+
 
 // フォームの入力チェック
 $(document).ready(function () {
