@@ -1,38 +1,110 @@
 @use "../global/" as *;
 .header {
-    position: sticky;
+    position: fixed;
     display: flex;
     width: 100%;
     height: 4rem;
     align-items: center;
     justify-content: space-between;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 2999;
+    @include mq("md"){
+        width: 100%;
+        height: 6rem;
+    }
 }
 .care-send__header {
     background-color: $white;
 }
 
 .header__btns{
-    margin-left: 5.75rem;
+    margin-left: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    @include mq("md"){
+        margin-left: 0;
+        width: min(24.609375%);
+    }
+    @include mq("lg"){
+        margin-left: 2rem;
+        width: 19rem;
+        justify-content: end;
+    }
+}
+.hero__link{
+    @include mq("md"){
+    display: block;
+    max-width: 14.1875rem;
+    padding-left: 1.25rem;
+    height: inherit;
+    }
+    @include mq("lg"){
+        width: 15.875rem;
+    }
+}
+.header__logo {
+    @include mq("md"){
+        display: block;
+    }
 }
 .header__mail {
+    position: relative;
     width: 4rem;
     height: 4rem;
     background-color: $main;
     padding: 0.5rem;
+    right: 0;
+    @include mq("sp"){
+        padding: 0.5rem 0.75rem;
+    }
+    @include mq("md"){
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: 0;
+        width: 100%;
+        height: 6rem; 
+        cursor: pointer;
+    }
+    @include mq("lg"){
+        margin-left: 3rem;
+        width: 9.9825rem;
+        position: relative;
+        padding: 0 0.5rem 0 1.6875rem;
+        right: 0;
+    }
 }
 .header__mail-image{
     display: block;
     width: 2rem;
     height: 2rem;
     margin: 0 auto;
+    max-width: 100%;
+    @include mq("md"){
+        display: inline-block;
+        margin: 0;
+        text-align: center;
+    }
+}
+.header__mail__inquiry{
+    @include mq("md"){
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: inherit;
+        cursor: pointer;
+        padding: 1.75em 0;
+        @include mq("lg"){
+            padding: 2rem 0;
+        }
+    }
 }
 .header__mail-text {
-    display: inline-block;
+    display: block;
     position: relative;
     top: -0.35rem;
     width: 100%;
@@ -40,12 +112,86 @@
     font-size: 0.625rem;
     color: $white;
     text-align: center;
+    @include mq("md"){
+        top: 0;
+        font-size: 1rem;
+        font-weight: $bold;
+        line-height: 2.5;
+        margin-left: 0.5rem;
+    }
+    @include mq("lg"){
+        top: 0rem;
+    }
 }
 .header__menu-button {
+    position: sticky;
     display: block;
     width: 4rem;
     height: 4rem;
     background-color: $bg-black;
     padding:  0.5rem;
     cursor: pointer;
+    right: 0;
+    @include mq("md"){
+        display: none;
+    }
+}
+.header__nav {
+    display: none;
+        @include mq("md"){
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            width: max(25rem,70%);
+            height: inherit;
+            margin: 0 0 0 3%;
+            padding: 0 2% 0 1%;
+        }
+        @include mq("lg"){
+            justify-content: space-between;
+            padding: 0 0.75em 0 2em;
+            margin: 0 3% 0 12%;
+            width: rem(568);
+            max-width: 100%;
+        }
+}
+.header__navigation{
+    display: none;
+    @include mq("sp"){
+        display: block;
+        height: inherit;
+        font-size: 0.655rem;
+        padding: 0.75rem 0 0 0;
+    }
+    @include mq("md"){
+        color: $main;
+        font-size: 1rem;
+        font-weight: $bold;
+        padding: 0;
+    }
+    @include mq("lg"){
+        padding: 0.85em 0 0 0;
+    }
+}
+.header__navigation:not(:first-child){
+    @include mq("md"){
+        margin-left: 0.75em;
+    }
+}
+
+.header__navigation-link {
+    @include mq("sp"){
+        display: block;
+        padding-top: 1rem;
+        text-decoration: none;
+        color: $main;
+        height: 100%;
+    }
+    @include mq("md"){
+        padding: 1.875rem 0 0 0;
+        max-width: 8.75rem
+    }
+    @include mq("lg"){
+        padding: 1.5rem 0 0 0;
+    }
 }

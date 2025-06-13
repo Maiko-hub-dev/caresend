@@ -1,11 +1,18 @@
 @use "../global/" as *;
 .footer {
     padding: 1.5rem 4.625rem;
+    position: relative;
+    margin-top: 3rem;
+    @include mq("md"){
+        padding: 0.5em 1.625rem 0.5em 3em;
+        margin-top: 1rem;
+    }
 }
 .footer-logo {
     display: block;
     width: 14.1875rem;
     margin: 0 auto;
+    max-width: 100%;
 }
 .footer__copyright {
     display: block;
@@ -14,4 +21,9 @@
     font-family: $eng-font;
     color: $bg-black;
     text-align: center;
+    @include mq("md"){
+        margin-top: 1.25em;
+        font-size: 0.75em;
+        padding: 1em 1.5em 0 0.8em;
+    }
 }

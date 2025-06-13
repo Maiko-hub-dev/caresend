@@ -1,18 +1,31 @@
 @use "../global/" as *;
 
 .care-send__header {
-    width: 100%;
+    width: 100vw;
     height: 4rem;
+    @include mq("md"){
+        width: 100%;
+        height: 6rem;
+    }
 }
 .care-send__hero{
     position: relative;
     display: flex;
-    flex:1;
     align-items: center;
     justify-content: space-between;
     height: 100%;
     z-index: 8888;
     padding-left: 1rem;
+    width: 8.6875rem;
+    @include mq("sp"){
+        width: 9rem;
+    }
+    @include mq("md"){
+        display: block;
+        width: 15.1875rem;
+        height: 6rem;
+        padding: 1.375rem 0;
+    }
 }
 .hero__link {
     display: block;
@@ -24,5 +37,15 @@
     max-height: 100%;
     width: 8.6875rem;
     height: auto;
+    max-width: 100%;
     z-index: 10000;
+    @include mq("sp"){
+        width: 9rem;
+    }
+    @include mq("md"){
+        width: 14.1875rem;
+    }
+    @include mq("lg"){
+        width: 15.875rem;
+    }
 }

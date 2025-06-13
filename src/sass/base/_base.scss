@@ -8,6 +8,12 @@ html.is-fixed {
 body {
   font-family: $base-font;
 }
+/* iPhoneの表示のみ指定を上書き */
+@supports(-webkit-touch-callout: none){
+.upper{
+  height: -webkit-fill-available;
+  }
+}
 
 // PCでは電話番号のクリックを無効にする
 a[href^="tel:"] {

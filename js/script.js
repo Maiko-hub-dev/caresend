@@ -1,12 +1,14 @@
 
 // Swiperの初期化
-const swiper = new Swiper(".swiper", {
+ const swiper = new Swiper(".swiper", {
   
   loop: true, // ループ有効
   slidesPerView: 2, // 一度に表示する枚数
   speed: 6000, // ループの時間
   allowTouchMove: false, // スワイプ無効
   autoplay: {
+      disableOnInteraction: false,
+  
       delay: 0, // 途切れなくループ
   },
   breakpoints: {
@@ -16,35 +18,65 @@ const swiper = new Swiper(".swiper", {
       }
   }
 });
-swiper.on('slideChangeTransitionEnd', function () {
-  swiper.updateAutoHeight(); // 現在のスライドに合わせて高さを更新
-});
+
+
+
+function adjustSlideHeights() {
+  const slides = document.querySelectorAll('.slide_case');
+  let maxHeight = 0;
+
+  // 最大の高さを取得
+  slides.forEach(slide => {
+    const slideContent = slide.querySelector('.slide_case');
+    if (slideContent) {
+      const height = slideContent.offsetHeight;
+      if (height > maxHeight) {
+        maxHeight = height;
+      }
+    }
+  });
+
+  // 全スライドに最大高さを適用
+  slides.forEach(slide => {
+    const slideContent = slide.querySelector('.slide_case');
+    if (slideContent) {
+      slideContent.style.height = `${maxHeight}px`;
+    }
+  });
+}
 
 const mySwiper = new Swiper('.case-swiper', {
-    autoHeight: true,
+    autoHeight: false,
     loop: true, // ループさせたくない場合は false。必要なら true に。
     autoplay: false, // 自動再生しない
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true, // ページネーションクリックで操作可能にする
-    },
+    speed: 500,
+   
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
     // 任意：一度に1スライド表示
-    slidesPerView: 1,
+    slidesPerView: 'auto',
     slidesPerGroup: 1,
     spaceBetween: 0,
     breakpoints: {
       768: { // タブレット以上
-        slidesPerView: 2,
+        slidesPerView: 'auto',
         slidesPerGroup: 2,
-      }}
-  }
+      }},
+      on: {
+        init: adjustSlideHeights,
+        resize: adjustSlideHeights,
+        slideChangeTransitionEnd: adjustSlideHeights
+      },
 
-  
+  }
 );
+//  autoHeightを明示的に更新するなら、変数名に合わせて書く
+mySwiper.on('slideChangeTransitionEnd', function () {
+  mySwiper.updateAutoHeight(); //  変数名を一致させる
+});
+
 
 //アコーディオンをクリックした時の動作
 $(document).ready(function() {
@@ -64,18 +96,38 @@ $(document).ready(function() {
     });
 });
 
+// const target = document.querySelector('.main__hero--img.fade-block2.fade-block3.scroll-block.blockIn');
+// if (target) {
+//   const blockPosition = target.getBoundingClientRect().top + window.scrollY;
+//   console.log('blockPosition:', blockPosition);
+// } else {
+//   console.warn('対象の要素が見つかりません');
+// }
 
 // 要素をふわっと表示させる
 $(window).scroll(function() {
   // ↓複数のオブジェクトに対して繰り返し処理を行う
-  $(".scroll-block").each(function() {
+  $("#scroll-block").each(function() {
     var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
-    var blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
-    var windowHeihgt = $(window).height(); // ウィンドウの高さ
-if (scroll > blockPosition - windowHeihgt + 300) {
+    let blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
+    var windowHeight = $(window).height(); // ウィンドウの高さ
+if (scroll > blockPosition - windowHeight + 300) {
       $(this).addClass("blockIn");
   }});
   });
+
+//  クラスで動かす
+$(window).on('scroll', function () {
+  $('.scroll-block').each(function () {
+    const scroll = $(window).scrollTop();
+    const blockPosition = $(this).offset().top;
+    const windowHeight = $(window).height();
+    if (scroll > blockPosition - windowHeight + 100) {
+      $(this).addClass('blockIn');
+    }
+  });
+});
+
 
 // フォームの入力チェック
 $(document).ready(function () {

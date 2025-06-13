@@ -41,7 +41,7 @@ $drawer-color: $white;
 }
 
 .sp-nav{
-    position: absolute;
+    position: fixed;
     top: 4rem;
     left: 0;
     right: 0;
@@ -55,6 +55,16 @@ $drawer-color: $white;
 }
 .js-hamberger.is-active .menu__button{
     right: 0.45em;
+}
+.drawer__item,
+.drawer__item a,
+.drawer__link,
+.drawer__link-mail,
+.drawer__link-cvr,
+.drawer__mail-image {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 
@@ -141,5 +151,6 @@ $drawer-color: $white;
     display: block;
     width: 2rem;
     height: 2rem;
+    max-width: 100%;
 }
 
