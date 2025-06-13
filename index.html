@@ -130,13 +130,13 @@
         <ul class="main__feature mfeature">
           <li class="main__features">
             <span class="feature-head">登録者</span>
-            <span class="feature-appear">58,000<span class="feature-appear__int">人</span> </span>
+            <span class="feature-appear feature-appear--ji">58,000<span class="feature-appear__int">人</span> </span>
             <div class="mfeature__station">
             <span class="feature__star">&#9733;</span> <span class="feature__number">1</span></div>
           </li>
           <li class="main__features main__features2">
             <span class="feature-head">即日派遣の</span>
-            <span class="feature-appear">実績多数</span>
+            <span class="feature-appear feature-appear--ji">実績多数</span>
             <div class="mfeature__station">
             <span class="feature__number feature__star">&#9733;</span> <span class="feature__number">2</span></div>
           </li>
@@ -299,8 +299,10 @@
     </div>
     <div class="dl-service" id="dl-service">
       <div class="dl-service--title fade-block3 card scroll-block">登録介護士を<br class="u-mobile">無料でご覧いただけます。</div>
+      <div class="dl-service__btn">
       <button class="section__submit submit scroll-block fade-block3"><span class="submit__button">
         無料で資料ダウンロード</span></button>
+      </div>
     </div>
   
     <div class="case-study" id="case-study">
@@ -308,7 +310,7 @@
       <div class="case-study__contents">
           <div class="case-swiper">
             <div class="contents_inner swiper-wrapper">
-              <div class="swiper-slide">
+              <div class="swiper-slide case-study__card">
                 <div class="slide_case">
                   <p class="slide_case-title">慢性的な介護士不足が解決し、<br>
                   <span class="slide_case-blue">優秀な人材</span>が確保できるように！</p>
@@ -321,33 +323,33 @@
                   </p>
                 </div>
               </div>
-              <div class="swiper-slide">
-                <div class="slide_case">
-                <p class="slide_case-title">急な欠員補充から<br>
+              <div class="swiper-slide case-study__card">
+                <div class="slide_case karabina">
+                <p class="slide_case-title">急な欠員補充から<br class="u-mobile">
                   <span class="slide_case-blue">正社員雇用</span>に繋がり、大変助かっています。
                 </p>
                   <p class="slide_case__content">「CareSend」に急なニーズでも対応可能な介護士さんが登録されていることは、本当に心強かったです。その中でも、派遣していただいた介護士さんはとても素晴らしく、紹介予定派遣を経て正社員として採用することになりました。当該介護士の存在は施設全体にとって大きな価値を持っています。
                     今後も積極的に正社員登用を考えておりますので、良い介護士に恵まれることを祈りつつ、利用をさせていただきます。
                   </p>
                   <p class="slide_case-company">
-                  <img src="./images/case02.jpg" alt="からびな介護サービス" loading="lazy" class="case-logo">
+                  <img src="./images/case02.jpg" alt="からびな介護サービス" loading="lazy" class="case-logo case_karabina">
                   </p>
                 </div>
               </div>
-              <div class="swiper-slide">
-                <div class="slide_case">
+              <div class="swiper-slide case-study__card">
+                <div class="slide_case slide_lower">
                   <p class="slide_case-title"><span class="slide_case-blue">ケアの質が向上!</span>
                     CareSendで利用者満足度も上昇!
                   </p>
-                    <p class="slide_case__content">当施設では、長らく介護士不足に悩まされてきました。ある日、急な欠員が発生し、困り果てていた時に、CareSendを利用することにしました。登録型派遣で急遽派遣してもらった介護士は、驚くほどのプロ意識と思いやりを持ち、施設内での業務をスムーズにこなしてくれました。その後、彼女は紹介予定派遣を経て正式に採用され、施設の一員として活躍しています。彼女の尽力により、施設の雰囲気は一変し、利用者の満足度も大幅に向上しました。
+                    <p class="slide_case__content slide_case-care">当施設では、長らく介護士不足に悩まされてきました。ある日、急な欠員が発生し、困り果てていた時に、CareSendを利用することにしました。登録型派遣で急遽派遣してもらった介護士は、驚くほどのプロ意識と思いやりを持ち、施設内での業務をスムーズにこなしてくれました。その後、彼女は紹介予定派遣を経て正式に採用され、施設の一員として活躍しています。彼女の尽力により、施設の雰囲気は一変し、利用者の満足度も大幅に向上しました。
                     </p>
                     <p class="slide_case-company">
                     <img src="./images/case03.jpg" alt="やすらぎケアハウス" loading="lazy" class="case-logo slide_lower">
                     </p>
                   </div>
               </div>
-              <div class="swiper-slide">
-                <div class="slide_case">
+              <div class="swiper-slide case-study__card">
+                <div class="slide_case toridori">
                   <p class="slide_case-title"><span class="slide_case-blue">派遣介護士の質</span>
                     が高く、とても驚きました。
                   </p>
@@ -355,10 +357,11 @@
                       私たちは派遣介護士の活用に新たな可能性を見出し、今後は更にその先の「採用」につなげていきたく思っています。
                     </p>
                     <p class="slide_case-company">
-                    <img src="./images/case04.jpg" alt="ハウスビル株式会社" loading="lazy" class="case-logo case__study-logo">
+                    <img src="./images/case04.jpg" alt="ハウスビル株式会社" loading="lazy" class="case-logo case__study-logo case-toridori">
                     </p>
                   </div>
               </div>
+              
             </div>
             <!-- 前後の矢印 -->
             <div class="swiper-button-prev btn-maru"></div>
@@ -475,9 +478,8 @@
       <h2 class="document-title">介護派遣に関する資料を<br class="document__br">無料でダウンロード</h2>
       <div class="document__container">
           <div class="document__inner">
-          <p class="document-description">「caresend」は、<br class="document__br">
-            高品質な介護派遣サービスを提供する<br class="document__br">
-            新しいプラットフォームです。</p>
+          <p class="document-description">CareSendに興味をお持ち頂き、ありがとうございます。<br class="u-mobile">
+            本フォームを送信頂きますと、サービス資料を送付させていただきます。</p>
           <img src="./images/whitepaper3.png" class="document__image" alt="資料ダウンロードイメージ" loading="lazy">
           </div>
           <form class="document_form inquiry-form">
@@ -502,15 +504,15 @@
             <div class="document_form inquiry__form-names">
               <label for="company" class="inquiry__label names__label">会社名</label><span class="inquiry_need">&#9733;</span>
             </div>
-              <input type="text" id="company_name" class="inquiry__input inquiry-input" placeholder="株式会社CareSend">
+              <input type="text" id="company_name" class="inquiry__input inquiry-input labelmy__input3" placeholder="株式会社CareSend">
             </div>
-            <div class="document_form inquiry__form-item">
-            <div class="document_form inquiry__form-names">
+            <div class="document_form inquiry__form-item inquiry__mail--item">
+            <div class="document_form inquiry__form-names inquiry__mail">
               <label for="company" class="inquiry__label names__label">メールアドレス</label><span class="inquiry_need">&#9733;</span>
             </div>
               <input type="email" id="mail" class="inquiry__input inquiry-input" placeholder="caresend@caresend.com">
             </div>
-            <div class="document_form inquiry__form-item">
+            <div class="document_form inquiry__form-item inquiry__tellphone">
             <div class="document_form inquiry__form-names">
               <label for="company" class="inquiry__label names__label">電話番号</label><span class="inquiry_need">&#9733;</span>
             </div>

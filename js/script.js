@@ -22,57 +22,59 @@
 
 
 function adjustSlideHeights() {
-  const slides = document.querySelectorAll('.swiper-slide');
+  const slides = document.querySelectorAll('.slide_case');
   let maxHeight = 0;
 
-
-
   // 最大の高さを取得
-  // slides.forEach(slide => {
-  //   const slideContent = slide.querySelector('.slide_case');
-  //   if (slideContent) {
-  //     const height = slideContent.offsetHeight;
-  //     slide.style.height = height + `px`;
-  //   }
-  // });
+  slides.forEach(slide => {
+    const slideContent = slide.querySelector('.slide_case');
+    if (slideContent) {
+      const height = slideContent.offsetHeight;
+      if (height > maxHeight) {
+        maxHeight = height;
+      }
+    }
+  });
 
   // 全スライドに最大高さを適用
-//   slides.forEach(slide => {
-//     slide.querySelector('.slide_case').style.height = `${maxHeight}px`;
-//   });
+  slides.forEach(slide => {
+    const slideContent = slide.querySelector('.slide_case');
+    if (slideContent) {
+      slideContent.style.height = `${maxHeight}px`;
+    }
+  });
 }
 
 const mySwiper = new Swiper('.case-swiper', {
     autoHeight: false,
     loop: true, // ループさせたくない場合は false。必要なら true に。
     autoplay: false, // 自動再生しない
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true, // ページネーションクリックで操作可能にする
-    },
+    speed: 500,
+   
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
     // 任意：一度に1スライド表示
-    slidesPerView: 1,
+    slidesPerView: 'auto',
     slidesPerGroup: 1,
-    spaceBetween: 20,
+    spaceBetween: 0,
     breakpoints: {
       768: { // タブレット以上
-        slidesPerView: 2,
+        slidesPerView: 'auto',
         slidesPerGroup: 2,
       }},
       on: {
         init: adjustSlideHeights,
         resize: adjustSlideHeights,
         slideChangeTransitionEnd: adjustSlideHeights
-      }
+      },
+
   }
 );
 //  autoHeightを明示的に更新するなら、変数名に合わせて書く
 mySwiper.on('slideChangeTransitionEnd', function () {
-  mySwiper.updateAutoHeight(); // ✅ 変数名を一致させる
+  mySwiper.updateAutoHeight(); //  変数名を一致させる
 });
 
 
@@ -179,47 +181,3 @@ $(window).on("scroll", function () {
     $(".header").removeClass("header-scroll");
   }
 });
-
-// formの記述
-
-// Node.jsで
-// Node.js（Expressなど）でGoogleフォームにPOSTする例
-const express = require('express');
-const axios = require('axios');
-const app = express();
-app.use(express.urlencoded({ extended: true }));
-
-app.post('/submit-form', async (req, res) => {
-  try {
-    await axios.post('https://docs.google.com/forms/u/0/d/e/1FAIpQLSe_Qy1LXiDKhc6xJea-lzijYI6__6T-mBjDsaYkJ6x6_jcPRw/formResponse', null, {
-      params: {
-        'entry.123456': req.body.name,  // ← Googleフォームで確認したname属性
-        'entry.789012': req.body.email
-      }
-    });
-    res.send('送信成功！');
-  } catch (error) {
-    res.status(500).send('送信失敗');
-  }
-});
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // フォームの自動送信を止める
-
-  const formData = new FormData(this);
-
-  fetch("https://docs.google.com/forms/d/e/XXXX/formResponse", {
-    method: "POST",
-    mode: "no-cors", // GoogleフォームはCORS非対応
-    body: formData
-  })
-    .then(() => {
-      // 成功したら thanks.html へ移動
-      window.location.href = "http://127.0.0.1:5500/thanks.html";
-    })
-    .catch((error) => {
-      console.error("送信失敗", error);
-      alert("送信に失敗しました。");
-    });
-});
-
-app.listen(3001, () => console.log('サーバー起動'));

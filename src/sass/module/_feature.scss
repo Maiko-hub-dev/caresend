@@ -3,6 +3,9 @@
 .feature {
     padding: 0 0.5rem;
     margin-top: 1rem;
+    @include mq("sp"){
+        padding: 0 1.25rem;
+    }
     @include mq("md"){
         margin-top: 3.5rem;
         padding: 3em 0.5rem 0;
@@ -12,9 +15,12 @@
     padding-top: 3.1875rem;
     padding-bottom: 1.9375rem;
     @include mq("md"){
+        padding: 3.245em 1em 1.875em;
+        margin: 0 auto;
+    }
+    @include mq("lg"){
         padding: 3.3245em 0 1.875rem;
         max-width: 984px;
-        margin: 0 auto;
     }
 }
 .feature__title.section-title{
@@ -39,6 +45,7 @@
     display: block;
     width: 7.25rem;
     margin: 0.875rem auto 0;
+    max-width: 100%;
 }
 .card__title {
     color: $card;

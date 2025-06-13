@@ -18,9 +18,9 @@
     font-size: 1rem;
     font-weight: bold;
     border-radius: 0.3125rem;
-    border: 1px solid $black; /* 吹き出しの枠線 */
     text-align: center;
     @include mq("md"){
+        font-size: 1.25rem;
         padding: 0.75rem 0 0.75rem;
         margin: 0;
     }
@@ -67,7 +67,17 @@
     margin-top: 0.9375rem;
     @include mq("md"){
         margin-top: 0;
-        padding: 0.5em 0.5em 0.5em 0.5em;
+        padding: 0.5em 0.25em 0.5em;
+    }
+}
+.inquiry__form-item.inquiry__mail--item{
+    @include mq("md"){
+        padding: 0.5em 0.25em 0;
+    }
+}
+.inquiry__form-item.inquiry__tellphone{
+    @include mq("md"){
+        padding: 0.5em 0.25em 0;
     }
 }
 .inquiry__form-item2 {
@@ -121,6 +131,11 @@
 .name__space{
     width: 48%;
 }
+.name__space:not(:first-child){
+    @include mq("md"){
+        margin-left: 1em;
+    }
+}
 
 .names__label{
     display: inline-block;
@@ -146,17 +161,31 @@
 
 .labelmy__input.labelmy__input{
     width: 50%;
+    @include mq("md"){
+        margin-top: 0.45em;
+    }
 }
 .labelmy__input.labelmy__input2{
     margin-left: 0.5625rem;
+    @include mq("md"){
+        margin-top: 0.45em;
+        margin-right: 0.5em;
+    }
 }
 
 .inquiry__input.inquiry-input{
     width: 100%;
     @include mq("md"){
         margin-top: 0.25rem;
+        padding: 0.65em 0.875em 0.75em 0.5em;
     }
 }
+.inquiry__input.labelmy__input3{
+    @include mq("md"){
+        margin-top: 0.35em;
+    }
+}
+
 .inquiry__form-policy{
     color: $bg-black;
     font-size: 0.75rem;
@@ -165,7 +194,7 @@
     margin-top: 1.5rem;
     @include mq("md"){
         font-size: 0.875rem;
-        margin-top: 1.12rem;
+        margin-top: 1.45rem;
         padding: 0 1.35em 0 0.75em;
     }
 }
@@ -177,11 +206,14 @@
     padding: 0.8125rem 1.6875rem;
     margin: 2.5rem auto 1.1875rem;
     @include mq("md"){
-        margin: 1.875rem auto 1.5rem;
-        width: 83.5%;
-        // max-width: 20rem;
+        width: 20rem;
+        max-width: 100%;
         border-radius: 1.5em;
         padding: 0.75em 0 0.65em;
+    }
+    @include mq("lg"){
+        margin: 1.875rem auto 1.5rem;
+        width: 83.5%;
     }
 }
 .inquiry__button{
@@ -190,8 +222,12 @@
     color: $white;
     font-size: 1rem;
     font-weight: $bold;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.01em;
     @include mq("md"){
+        font-size: 1rem;
+    }
+    @include mq("lg"){
+        letter-spacing: 0.04em;
         font-size: 1.25rem;
     }
 }

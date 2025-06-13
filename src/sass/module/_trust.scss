@@ -32,8 +32,10 @@
     display: block;
     width: 17.5rem;
     margin: 0 auto;
+    max-width: 100%;
     @include mq("md"){
-        width: 26.75rem;
+        width: min(26.75rem, 50%);
+        max-width: 40%;
         margin: 0.75rem 2.625rem;
     }
 }
@@ -58,6 +60,7 @@
 .badge_with.trust__swiper--img{
     display: block;
     width: 11rem;
+    max-width: 100%;
     @include mq("md"){
         width: 15.5rem;
     }

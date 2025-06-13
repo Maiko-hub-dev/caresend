@@ -18,15 +18,18 @@
     }
     @include mq("md"){
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         height: 100%;
         top: 4rem;
-        padding-bottom: 4.25rem;
+        padding-bottom: 3.5rem;
+    }
+    @include mq("lg"){
+        justify-content: space-between;
     }
 }
 .main__container{
     @include mq("sp"){
-        width: 90%;
+        width: 100%;
         padding-left: 5%;
         padding-right: 1%;
     }
@@ -46,7 +49,7 @@
     display: block;
     width: 100%;
     color: $white;
-    font-weight: $regular;
+    font-weight: $normal;
     letter-spacing: 0.04em;
     text-align: center;
     font-size: 0.875rem;
@@ -260,6 +263,7 @@
         width: 360px;  
         top: -5.5rem;
         right: -0.75rem; 
+        max-width: 100%;
     }
     @include mq("lg"){
         right: 0;
@@ -268,14 +272,18 @@
 .main__form {
     padding: 0.5rem;
     @include mq("md"){
-        padding: 9rem 0.5rem 0.5rem;
-        width: max(20.4%, 18.4rem);
+        padding: 4rem 0.5rem 0.5rem;
+        width: max(34.4%);
     }
     @include mq("lg"){
         position: relative;
         top: 0;
         right: min(7rem, 10%);
-        width: 28.54%;
+        padding: 4rem 1.75rem 1em 0.15em;
+        width: fit-content;
+    }
+    @include mq("lg"){
+        max-width: 38.54%;
         padding: 7.25rem 1.75rem 1em 0.15em;
     }
 }
@@ -310,5 +318,11 @@
 .feature-appear {
     @include mq("md"){
         font-size: 2rem;
+        padding: 0 0.25em;
+    }
+}
+.feature-appear.feature-appear--ji{
+    @include mq("md"){
+        padding: 0;
     }
 }

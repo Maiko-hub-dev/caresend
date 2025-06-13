@@ -37,6 +37,7 @@
     max-height: 100%;
     width: 8.6875rem;
     height: auto;
+    max-width: 100%;
     z-index: 10000;
     @include mq("sp"){
         width: 9rem;

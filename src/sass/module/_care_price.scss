@@ -3,14 +3,17 @@
 .care_price {
     background-color: $about;
     width: 100%;
-    padding: 4.5rem 2rem;
+    padding: 4.5rem 0rem;
     @include mq("md"){
-      padding: 4.5rem 0;
+      padding: 4.25rem 0 2em 0;
     }
 }
 
 .kind__title{
     font-weight: $bold;
+    @include mq("md"){
+      padding: 0 1em 0 3em;
+    }
 }
 
 .kind__contents {
@@ -31,16 +34,18 @@
       width: 100%;
       grid-template-columns: repeat(3, minmax(189px,1fr));
       grid-gap: 0.75rem;
+      padding: 0 0.5em;
     }
     @include mq("md"){
       display: grid;
       grid-template-columns: repeat(3, minmax(250px, 1fr));
+      margin: 3.75rem auto 2em;
     }
 }
 
 .kind__item {
     display: block;
-    width: 6rem;
+    width: 30.76%;
     border-radius: 5px;
     background-color: $white; /* ボックスの背景色 */
     position: relative;
@@ -49,6 +54,9 @@
     margin: 0 auto;
     @include mq("sp"){
       width: inherit;
+    }
+    @include mq("md"){
+      padding: 0.875rem 0.5rem 4.25em;
     }
     
   }
@@ -81,6 +89,7 @@
     }
     @include mq("md"){
       font-size: 1.5rem;
+      margin-top: 1.5rem;
     }
   }
   .kind__item--price{
@@ -96,6 +105,7 @@
     }
     @include mq("md"){
       font-size: 2rem;
+      margin-top: -0.5rem;
     }
   }
   .kind__item--price  .kind__price{
@@ -118,6 +128,8 @@
     @include mq("md"){
       margin: 3rem auto 3.5635rem;
       line-height: 1.785714;
+      font-size: 0.875rem;
+      letter-spacing: 0.03em;
     }
   }
 
