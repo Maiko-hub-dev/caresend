@@ -1,4 +1,44 @@
 
+
+function adjustSlideHeights() {
+  const slides = document.querySelectorAll('.case-study__card');
+  let maxHeight = 0;
+  // 最大の高さを取得
+  slides.forEach(slide => {
+   const height = slide.offsetHeight;
+    if (height > maxHeight) {
+      maxHeight = height;
+    }
+  });
+
+  // 全スライドに最大高さを適用
+  slides.forEach(slide => {
+    slide.style.height = `${maxHeight}px`;
+  });
+
+
+}
+
+  document.addEventListener('DOMContentLoaded', function () {
+    new Splide('.case-splide', {
+      type: 'loop',
+      perPage: 2,
+      perMove: 1,
+      interval: 5000,
+      arrows: true,
+      pagination: false,
+      gap: '1rem',
+      breakpoints: {
+        767: {
+          perPage: 1,
+          gap: '0.5rem',
+        },
+      },
+    }).mount();
+  });
+
+
+
 // Swiperの初期化
  const swiper = new Swiper(".swiper", {
   
@@ -21,88 +61,26 @@
 
 
 
-function adjustSlideHeights() {
-  const slides = document.querySelectorAll('.slide_case');
-  let maxHeight = 0;
-
-  // 最大の高さを取得
-  slides.forEach(slide => {
-    const slideContent = slide.querySelector('.slide_case');
-    if (slideContent) {
-      const height = slideContent.offsetHeight;
-      if (height > maxHeight) {
-        maxHeight = height;
-      }
-    }
-  });
-
-  // 全スライドに最大高さを適用
-  slides.forEach(slide => {
-    const slideContent = slide.querySelector('.slide_case');
-    if (slideContent) {
-      slideContent.style.height = `${maxHeight}px`;
-    }
-  });
-}
-
-const mySwiper = new Swiper('.case-swiper', {
-    autoHeight: false,
-    loop: true, // ループさせたくない場合は false。必要なら true に。
-    autoplay: false, // 自動再生しない
-    speed: 500,
-   
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    // 任意：一度に1スライド表示
-    slidesPerView: 'auto',
-    slidesPerGroup: 1,
-    spaceBetween: 0,
-    breakpoints: {
-      768: { // タブレット以上
-        slidesPerView: 'auto',
-        slidesPerGroup: 2,
-      }},
-      on: {
-        init: adjustSlideHeights,
-        resize: adjustSlideHeights,
-        slideChangeTransitionEnd: adjustSlideHeights
-      },
-
-  }
-);
-//  autoHeightを明示的に更新するなら、変数名に合わせて書く
-mySwiper.on('slideChangeTransitionEnd', function () {
-  mySwiper.updateAutoHeight(); //  変数名を一致させる
-});
-
 
 //アコーディオンをクリックした時の動作
 $(document).ready(function() {
     $('.accordion__title, .accordion__door').click(function() {
       // アコーディオン（内容）の開閉    
-    $(this).next('.accordion__answer').slideToggle(1000);
+    $(this).next('.accordion__answer').slideToggle(500);
       // タイトルにopenクラスを付与または削除してプラスマイナス可変
-      $(this).toggleClass("open",1000);
+      $(this).toggleClass("open",700);
     });
   });
 $(document).ready(function() {
     $('.accordion_question').click(function() {
       // アコーディオン（内容）の開閉    
-    $(this).next('.accordion__answer').slideToggle(1000);
+    $(this).next('.accordion__answer').slideToggle(500);
       // タイトルにopenクラスを付与または削除してプラスマイナス可変
-      $(this).toggleClass("open",1000);
+      $(this).toggleClass("open",700);
     });
 });
 
-// const target = document.querySelector('.main__hero--img.fade-block2.fade-block3.scroll-block.blockIn');
-// if (target) {
-//   const blockPosition = target.getBoundingClientRect().top + window.scrollY;
-//   console.log('blockPosition:', blockPosition);
-// } else {
-//   console.warn('対象の要素が見つかりません');
-// }
+
 
 // 要素をふわっと表示させる
 $(window).scroll(function() {

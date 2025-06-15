@@ -15,43 +15,53 @@
         padding: 0 1vw 0 1em;
     }
 }
-.case-swiper{
+
+
+.case-splide{
     width: 100%;
-    height: 100%;
     position: relative;
-    padding: 0 0.75em;
-    @include mq("md"){
-        padding: 0 0 2rem;
-    }
+ 
 }
 
-.case-study__contents{
+.case-study__contents.case-splide{
     padding: 0 0.75rem;
     height: inherit;
     margin-top: 3.5625rem;
     justify-content: center;
     @include mq("md"){
-        padding: 0.5em 2em 0 1.5em;
-        width: 100%;
-        max-width: 61.125rem;
-        margin: 4rem auto 1em;
-        overflow: hidden;
+        padding: 0.5em 2em 0 1.75em;
+        width: 64.125rem;
+        margin: 4.5625rem auto 1em;
     }
 }
 
-.contents_inner {
-    display: flex;
-    transition-timing-function: ease;
-    // box-sizing: content-box;
-    height: inherit;
+.contents_inner.splide__track {
     @include mq("md"){
-        padding: 0 0.5em;
+        padding: 0 2.5em;
     }
   }
-
-
-.slide_case{
+.case-splide .splide__arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 100%;
+    pointer-events: none;
+}
+  .case-splide  .splide__arrow {
+      pointer-events: auto;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2.5rem;
+      height: 2.5rem;
+
+      &--prev {
+        left: -20px; // コンテンツより外側に表示
+      }
+
+    }
+
+.case-study__card{
     background-color: $white;
     box-shadow: 0 5px 8px 3px rgba($bg-black, 0.25);
     border-radius: 1.875rem 0;
@@ -60,12 +70,11 @@
     @include mq("md"){
         min-height: 488px;
         height: inherit;
-        width: 100%;
         max-width: 100%;
         padding: 2rem 0.85rem 0 1rem;
     }
 }
-.slide_case {
+.case-study__card {
     display: flex;
     flex-direction: column;
   }
@@ -91,7 +100,7 @@
     }
 } 
 
-.slide_case-title {
+.slide-case-title {
     font-size: 1.125rem;
     color: $bg-black;
     line-height: 1.7777777;
@@ -103,10 +112,31 @@
         letter-spacing: 0.01em;
     }
 }
-
+.case-study__list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.case-study__card{
+    display: block;
+    height: inherit;
+    width: 100%;
+    @include mq("md"){
+        width: 45%;
+    }
+}
+.slide_case-title {
+    font-weight: $bold;
+    letter-spacing: 0.04em;
+    font-size: 1.125rem;
+    @include mq("md"){
+        font-size: 1.5rem;
+    }
+}
 .slide_case-title .slide_case-blue{
     color: $main;
 }
+
 .slide_case__content{
     font-size: 0.75rem;
     font-weight: $regular;
@@ -119,7 +149,6 @@
         font-size: 0.875rem;
         margin-top: 1.75rem;
         line-height: 1.77;
-        letter-spacing: 0.05em;
         padding: 0 0.0125rem 0 0.012rem;
     }
 }
@@ -133,6 +162,7 @@
     width: 100%;
     padding-left: 2rem;
     @include mq("md"){
+        width: 50%;
         padding-left: 0.5rem;
     }
 }
@@ -181,4 +211,7 @@
         margin-top: 1.25rem;
         width: 5.0625rem;
     }
+}
+.splide__arrow--next{
+    right: 15px;
 }

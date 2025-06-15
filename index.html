@@ -30,6 +30,9 @@
   <!-- css -->
   <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+" rel="stylesheet">
     <!-- for Datepicker -->
 
   <link rel="stylesheet" href="./css/style.css?ver=1.0.1">
@@ -44,7 +47,10 @@
     <!-- Initialize Swiper -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
     <script src="./js/script.js" defer></script>
+
 </head>
 <body class="upper" >
       <div class="care-send__header header js-header">
@@ -307,11 +313,12 @@
   
     <div class="case-study" id="case-study">
       <h2 class="case-title section-title">導入事例</h2>
-      <div class="case-study__contents">
-          <div class="case-swiper">
-            <div class="contents_inner swiper-wrapper">
-              <div class="swiper-slide case-study__card">
-                <div class="slide_case">
+
+  <div class="case-study__contents case-splide splide">
+  <div class="contents_inner splide__track">
+    <ul class="splide__list case-study__list">
+      <li class="splide__slide case-study__card">
+         <div class="slide_case">
                   <p class="slide_case-title">慢性的な介護士不足が解決し、<br>
                   <span class="slide_case-blue">優秀な人材</span>が確保できるように！</p>
                   <p class="slide_case__content">
@@ -321,23 +328,21 @@
                   <p class="slide_case-company">
                     <img src="./images/case01.jpg" alt="まるもケアセンター" loading="lazy" class="case-logo case__study-logo">
                   </p>
-                </div>
-              </div>
-              <div class="swiper-slide case-study__card">
-                <div class="slide_case karabina">
+                </div></li>
+      <li class="splide__slide case-study__card">
+            <div class="slide_case karabina">
                 <p class="slide_case-title">急な欠員補充から<br class="u-mobile">
                   <span class="slide_case-blue">正社員雇用</span>に繋がり、大変助かっています。
                 </p>
-                  <p class="slide_case__content">「CareSend」に急なニーズでも対応可能な介護士さんが登録されていることは、本当に心強かったです。その中でも、派遣していただいた介護士さんはとても素晴らしく、紹介予定派遣を経て正社員として採用することになりました。当該介護士の存在は施設全体にとって大きな価値を持っています。
+                  <p class="slide_case__content  slide_case-care">「CareSend」に急なニーズでも対応可能な介護士さんが登録されていることは、本当に心強かったです。その中でも、派遣していただいた介護士さんはとても素晴らしく、紹介予定派遣を経て正社員として採用することになりました。当該介護士の存在は施設全体にとって大きな価値を持っています。
                     今後も積極的に正社員登用を考えておりますので、良い介護士に恵まれることを祈りつつ、利用をさせていただきます。
                   </p>
                   <p class="slide_case-company">
                   <img src="./images/case02.jpg" alt="からびな介護サービス" loading="lazy" class="case-logo case_karabina">
                   </p>
-                </div>
-              </div>
-              <div class="swiper-slide case-study__card">
-                <div class="slide_case slide_lower">
+                </div></li>
+      <li class="splide__slide case-study__card">
+         <div class="slide_case slide_lower">
                   <p class="slide_case-title"><span class="slide_case-blue">ケアの質が向上!</span>
                     CareSendで利用者満足度も上昇!
                   </p>
@@ -346,10 +351,9 @@
                     <p class="slide_case-company">
                     <img src="./images/case03.jpg" alt="やすらぎケアハウス" loading="lazy" class="case-logo slide_lower">
                     </p>
-                  </div>
-              </div>
-              <div class="swiper-slide case-study__card">
-                <div class="slide_case toridori">
+                  </div></li>
+      <li class="splide__slide case-study__card">
+           <div class="slide_case toridori">
                   <p class="slide_case-title"><span class="slide_case-blue">派遣介護士の質</span>
                     が高く、とても驚きました。
                   </p>
@@ -359,16 +363,17 @@
                     <p class="slide_case-company">
                     <img src="./images/case04.jpg" alt="ハウスビル株式会社" loading="lazy" class="case-logo case__study-logo case-toridori">
                     </p>
-                  </div>
-              </div>
-              
-            </div>
-            <!-- 前後の矢印 -->
-            <div class="swiper-button-prev btn-maru"></div>
-            <div class="swiper-button-next btn-maru"></div>
-          </div>
-   
-      </div>
+                  </div></li>
+    </ul>
+  </div>
+  
+  <div class="splide__arrows">
+  <button class="splide__arrow splide__arrow--prev btn-maru"></button>
+  <button class="splide__arrow splide__arrow--next btn-maru"></button>
+  </div>
+</div>
+
+      </div> 
     </div>
     <div class="care_price kind" id="care_price">
       <div class="kind__contents">
@@ -531,6 +536,6 @@
       <p class="footer__copyright">&copy;CareSend&nbsp;,Inc</p>
     </div>
   
-      
+
 </body>
 </html>

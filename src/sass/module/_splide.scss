@@ -1,0 +1,51 @@
+@use "../global/" as *;
+
+
+
+.case-splide {
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+
+.splide__track {
+  overflow: hidden;
+  width: 100%;
+  padding: 0.25em 2.65rem 0.25em 2.25rem !important; // ← ナビボタンのための余白
+}
+
+  .splide__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .splide__slide {
+    opacity: 0;
+    background-color: $white;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+  }
+.splide__slide.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  @include mq("md"){
+    margin-left: 1.125rem;
+  }
+}
+
+ .splide__arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+
+
+}
+}
+.splide__arrow{
+  opacity: 1 !important;
+}

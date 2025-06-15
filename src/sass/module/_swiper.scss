@@ -1,14 +1,6 @@
 @use "../global/" as *;
 
-// $slidesPerView: 2; // PC表示でのスライド枚数
-
-// .swiper-slide.case-study__card {
-//   @include mq("md"){
-//   width: calc(100% / #{$slidesPerView}); // ← 分割幅を指定
-//   }
-// }
-
-.contents_inner.swiper {
+.case-splide.splide {
   min-height: 471px;
   @include mq("md"){
     min-height: 488px;
@@ -26,11 +18,14 @@
   }
   }
 
-.contens_inner.swiper-wrapper{
+.contens_inner.splide__track{
   display: flex;
+  overflow: hidden;
+  position: relative;
   @include mq("md"){
     align-items: center;
     justify-content: flex-start;
+    margin: 0 auto;
   }
 }
 /* 画像のサイズ調整 */
@@ -47,41 +42,17 @@
 }
 
 
-.swiper-slide.swiper-slide-next.case-study__card {
-  width: 100%;
-  @include mq("md"){
-    width: 45%;
-    margin-right: rem(15);
-}
-}
-.swiper-slide.swiper-slide-active.case-study__card{
-  width: 100%;
-  @include mq("md"){
-    margin-left: 0;
-    margin-right: rem(15);
-    width: 45%;
-  }
-}
 
-.swiper-slide.swiper-slide-next.case-study__card{
-  @include mq("md"){
-    margin-left: rem(15);
-  }
-}
-.swiper-slide.swiper-slide-prev >.slide_case{
-  opacity: 0;
-}
-
-.swiper-slide.trust__swiper{
+.swiper__slide.trust__swiper{
   @include mq("md"){
     width: 15.5rem;
   }
 }
-.swiper-slide.swiper-slide-duplicate{
+.splide__slide.splide__slide-duplicate{
   height: inherit;
 }
 
-.swiper-slide img {
+.swiper__slide img {
     display: block;
     align-self: center; /* 上下の中央揃え */
     max-width: 100%;
@@ -96,8 +67,8 @@
     background-color: $sub;
   }
 
-.swiper-button-prev,
-.swiper-button-next{
+.splide__arrow--prev,
+.splide__arrow--next{
     position: absolute;
     top: 50%;
     bottom: 0;
@@ -110,8 +81,8 @@
         height: 34px;
       }
     }
-.swiper-button-next::after,
-.swiper-button-prev::after{
+.splide__arrow--next::after,
+.splide__arrow--prev::after{
  content: "";
   position: relative;
   z-index: 2;
@@ -125,7 +96,7 @@
     left: 0;
 }
 
-.swiper-button-prev::after
+.splide__arrow--prev::after
  {
   transform: rotate(-135deg);
   border-width: 2px 2px 0 0;
@@ -136,7 +107,7 @@
         border-width: 4px 4px 0 0;
   }
 }
-.swiper-button-next::after{
+.splide__arrow--next::after{
   transform: rotate(45deg);
   border-width: 2px 2px 0 0;
   left: -1px;
@@ -147,8 +118,8 @@
   }
 }
 
-.swiper-button-prev::before,
-.swiper-button-next::before{
+.splide__arrow--prev::before,
+.splide__arrow--next::before{
   content: "";
   position: absolute;
   top: 0;
@@ -160,15 +131,15 @@
   z-index: 1;
 }
 
-.swiper-button-prev {
+.splide__arrow--prev {
   left: -10px;
   @include mq("md"){
 
   }
 }
-.swiper-button-next {
+.splide__arrow--next {
   right: 10px;
   @include mq("md"){
-    right: -30px;
+    right: 25px;
 }
 }
