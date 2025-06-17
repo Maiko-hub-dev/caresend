@@ -18,13 +18,13 @@
     }
     @include mq("md"){
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         height: 100%;
         top: 4rem;
         padding-bottom: 3.5rem;
     }
     @include mq("lg"){
-        justify-content: space-between;
+        justify-content: center;
     }
 }
 .main__container{
@@ -40,11 +40,25 @@
         padding-top: 4.25rem;
     }
     @include mq("lg"){
-        width: 64.02%;
+        width: 47.25rem;
         padding-left: 5%;
     }
 }
-
+.main__form {
+    padding: 0.5rem;
+    @include mq("md"){
+        padding: 4rem 0.5rem 0.5rem;
+        width: max(34.4%);
+    }
+    @include mq("lg"){
+        position: relative;
+        top: 0;
+        right: 0;
+        padding: 5rem 1em 1em 0;
+        max-width: 38.54%;
+        margin-left: 4%;
+    }
+}
 .main__headcopy {
     display: block;
     width: 100%;
@@ -56,17 +70,16 @@
     position: relative;  // 念の為
     @include mq("md"){
         font-size: 1.25rem;
-        padding-left: 3.5rem;
         display: inline-block;
         text-align: left;
     }
     @include mq("lg"){
-        padding-left: 7.5rem;
+        width: 100%;
+        padding-left: 5%;
     }
 }
 .main__catch-text {
     display: inline-block;
-    width: 100%;
     margin-top: 1.125rem;
     color: $white;
     font-size: 1.5rem;
@@ -74,21 +87,20 @@
     letter-spacing: 0.04em;
     font-weight: $bold;
     text-align: center;
-    @include mq("sp"){
-        font-size: 2em;
-        letter-spacing: 0.02em;
-    }
+    white-space: nowrap;
+    width: 100%;
     @include mq("md"){
         font-size: 2.75em;
         margin-top: 0.45rem;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.01em;
         line-height: 1.75;
-        padding: 0 0.5rem 0 3.5rem;
+        padding: 0 0.5rem 0 0;
         text-align: left;
     }
     @include mq("lg"){
+        width: fit-content;
         font-size: 3.25rem;
-        padding: 0 2.5rem 0 7.685rem;
+        padding: 0 2.5rem 0 5%;
     }
 }
 
@@ -102,17 +114,19 @@
     letter-spacing: 0.04em;
     font-weight: $bold;
     text-align: center;
+    white-space: nowrap;
     @include mq("md"){
         font-size: 2.75em;
         margin-top: 0;
-        letter-spacing: 0.05em;
-        padding: 0 0.125rem 0 3.5rem;
+        letter-spacing: 0.01em;
+        padding: 0 0.125rem 0 0;
         line-height: 1.675;
         text-align: left;
     }
     @include mq("lg"){
+        width: fit-content;
         font-size: 3.25rem;
-        padding: 0 0.125rem 0 7.685rem;
+        padding: 0 0.125rem 0 5%;
         line-height: 1.5;
     }
 }
@@ -128,13 +142,13 @@
     @include mq("md"){
         margin-top: 1rem;
         font-size: 1.25rem;
-        padding-left: 3.5rem;
         text-align: left;
         line-height: 1.5;
         text-indent: 0;         /* インデントが勝手に入っていればリセット */
     }
     @include mq("lg"){
-        padding-left: 7.5rem;
+        padding-left: 5%;
+        width: fit-content;
     }
 }
 .main__feature {
@@ -145,11 +159,11 @@
     margin-top: 1rem;
     padding: 0 1rem;
     @include mq("md"){
-        padding: 0 0 0 1rem;
+        padding: 0;
         justify-content: flex-start;
     }
     @include mq("lg"){
-        padding: 0 0 0 7.5rem;
+        padding: 0 0 0 5%;
     }
 }
 
@@ -170,11 +184,13 @@
     padding: 1.5em 0 0.5em;
     
     @include mq("md"){
-        width: 10.25em;
-        height: 10.25em;
+        width: 9.5rem;
+        height: 9.5rem;
         padding: 2em 0.125em 0;
     }
     @include mq("lg"){
+        width: 10.25em;
+        height: 10.25em;
         padding: 2em 0.5em 0;
     }
 }
@@ -183,7 +199,7 @@
     padding: 1.5em 0 0.5em;
     @include mq("md"){
         padding: 2em 0.1em 0;
-        margin-left: 0.25rem;
+        margin-left: 0.5rem;
     }
     @include mq("lg"){
         padding: 2em 0.5em 0;
@@ -228,23 +244,26 @@
     transform: scale(0.9);
 }
 .main__catch-description {
-    display: inline-block;
+    display: block;
     width: 100%;
     color: $white;
     font-size: 0.6875rem;
-    padding-left: 1rem;    
+    padding-left: 0;    
     margin-top: 1.5rem;
     letter-spacing: 0.04em;
+    text-align: center;
     @include mq("md"){
-        padding-left: 7.25rem;
+        width: fit-content;
+        padding-left: 5%;
         margin-top: 1.75rem;
         line-height: 1;
+        text-align: left;
     }
 }
 .main__catch-description.main__catch-description2{
     margin-bottom: rem(7);
     @include mq("md"){
-    display: inline-block;
+    display: -block;
     position: relative;
     top: -0.35rem;
     margin-top: 0.5rem;
@@ -253,7 +272,12 @@
 .main__hero--img {
     padding: 0 0.5rem;
     @include mq("md"){
+        width: 100%;
         position: relative;
+        margin-top: 4rem;
+    }
+    @include mq("lg"){
+        margin-top: 0;
     }
 }
 .main__hero-image {
@@ -263,30 +287,14 @@
         width: 360px;  
         top: -5.5rem;
         right: -0.75rem; 
+        bottom: 0;
         max-width: 100%;
     }
     @include mq("lg"){
-        right: 0;
+        top: -4rem;
     }
 }
-.main__form {
-    padding: 0.5rem;
-    @include mq("md"){
-        padding: 4rem 0.5rem 0.5rem;
-        width: max(34.4%);
-    }
-    @include mq("lg"){
-        position: relative;
-        top: 0;
-        right: min(7rem, 10%);
-        padding: 4rem 1.75rem 1em 0.15em;
-        width: fit-content;
-    }
-    @include mq("lg"){
-        max-width: 38.54%;
-        padding: 7.25rem 1.75rem 1em 0.15em;
-    }
-}
+
 
 .end-message {
     display: none;
@@ -298,9 +306,10 @@
 
 .mfeature {
     margin-top: 1rem;
+    width: 100%;
     @include mq("md"){
         margin-top: 1.875rem;
-        width: 100%;
+        width: fit-content;
     }
     @include mq("lg"){
         margin-top: 2.5rem;
@@ -317,8 +326,11 @@
 }
 .feature-appear {
     @include mq("md"){
-        font-size: 2rem;
+        font-size: 1.5rem;
         padding: 0 0.25em;
+    }
+    @include mq("lg"){
+        font-size: 2rem;
     }
 }
 .feature-appear.feature-appear--ji{

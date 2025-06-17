@@ -11,22 +11,17 @@ function adjustSlideHeights() {
     }
   });
 
-  // 全スライドに最大高さを適用
-  slides.forEach(slide => {
-    slide.style.height = `${maxHeight}px`;
-  });
-
-
 }
 
   document.addEventListener('DOMContentLoaded', function () {
-    new Splide('.case-splide', {
+    const splide = new Splide('.case-splide', {
       type: 'loop',
       perPage: 2,
       perMove: 1,
       interval: 5000,
       arrows: true,
       pagination: false,
+      reduceMotion: true,
       gap: '1rem',
       breakpoints: {
         767: {
@@ -34,7 +29,12 @@ function adjustSlideHeights() {
           gap: '0.5rem',
         },
       },
-    }).mount();
+    });
+
+     splide.on('mounted move resized updated', () => {
+    adjustSlideHeights();
+  });
+    splide.mount();
   });
 
 

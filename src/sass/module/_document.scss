@@ -107,7 +107,7 @@
         padding: 0.5em 0.5em 0.2em 0.5em;
     }
     @include mq("lg"){
-        max-width: 400px;
+        max-width: 25rem;
     }
 }
 .document_form.inquiry__form-names{

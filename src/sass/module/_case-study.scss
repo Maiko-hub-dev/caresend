@@ -50,13 +50,21 @@
   .case-splide  .splide__arrow {
       pointer-events: auto;
       position: absolute;
-      top: 50%;
+    //   top: 50%;
       transform: translateY(-50%);
       width: 2.5rem;
       height: 2.5rem;
+      @include mq("md"){
+        width: 2.25rem;
+        height: 2.25rem;
+      }
 
       &--prev {
-        left: -20px; // コンテンツより外側に表示
+          left: -7px; // コンテンツより外側に表示
+          @include mq("md"){
+              top: -5px;
+              left: -10px;
+        }
       }
 
     }
@@ -214,4 +222,7 @@
 }
 .splide__arrow--next{
     right: 15px;
+    @include mq("md"){
+        top: -5px;
+    }
 }

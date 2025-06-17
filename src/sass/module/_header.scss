@@ -18,7 +18,25 @@
 .care-send__header {
     background-color: $white;
 }
-
+.header__nav {
+    display: none;
+        @include mq("md"){
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            width: max(25rem,70%);
+            height: inherit;
+            margin: 0 0 0 3%;
+            padding: 0 2% 0 1%;
+        }
+        @include mq("lg"){
+            justify-content: space-between;
+            padding: 0 3.5em 0 2em;
+            margin: 0 3% 0 auto;
+            width: 41.5rem;
+            max-width: 100%;
+        }
+}
 .header__btns{
     margin-left: 5rem;
     display: flex;
@@ -29,7 +47,6 @@
         width: min(24.609375%);
     }
     @include mq("lg"){
-        margin-left: 2rem;
         width: 19rem;
         justify-content: end;
     }
@@ -38,7 +55,7 @@
     @include mq("md"){
     display: block;
     max-width: 14.1875rem;
-    padding-left: 1.25rem;
+    margin-left: 1.25rem;
     height: inherit;
     }
     @include mq("lg"){
@@ -69,9 +86,9 @@
         width: 100%;
         height: 6rem; 
         cursor: pointer;
+        padding: 0.5em 0.25em;
     }
     @include mq("lg"){
-        margin-left: 3rem;
         width: 9.9825rem;
         position: relative;
         padding: 0 0.5rem 0 1.6875rem;
@@ -85,9 +102,13 @@
     margin: 0 auto;
     max-width: 100%;
     @include mq("md"){
+        transform: scale(0.8);
         display: inline-block;
         margin: 0;
         text-align: center;
+    }
+    @include mq("lg"){
+        transform: scale(1);
     }
 }
 .header__mail__inquiry{
@@ -136,30 +157,13 @@
         display: none;
     }
 }
-.header__nav {
-    display: none;
-        @include mq("md"){
-            display: flex;
-            align-items: center;
-            justify-content: start;
-            width: max(25rem,70%);
-            height: inherit;
-            margin: 0 0 0 3%;
-            padding: 0 2% 0 1%;
-        }
-        @include mq("lg"){
-            justify-content: space-between;
-            padding: 0 0.75em 0 2em;
-            margin: 0 3% 0 12%;
-            width: rem(568);
-            max-width: 100%;
-        }
-}
+
 .header__navigation{
     display: none;
     @include mq("sp"){
         display: block;
         height: inherit;
+        white-space: nowrap;
         font-size: 0.655rem;
         padding: 0.75rem 0 0 0;
     }
@@ -167,15 +171,18 @@
         color: $main;
         font-size: 1rem;
         font-weight: $bold;
-        padding: 0;
+        padding: 0.5em 0 0 0;
     }
     @include mq("lg"){
         padding: 0.85em 0 0 0;
     }
 }
 .header__navigation:not(:first-child){
-    @include mq("md"){
+    @include mq("sp"){
         margin-left: 0.75em;
+    }
+    @include mq("md"){
+        margin-left: 0;
     }
 }
 
